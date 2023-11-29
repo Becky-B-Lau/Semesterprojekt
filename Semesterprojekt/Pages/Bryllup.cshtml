@@ -1,7 +1,7 @@
 ﻿@page
-@model PortfolioModel
+@model Semesterprojekt.Pages.BryllupModel
 @{
-    ViewData["Title"] = "Portfolio";
+    ViewData["Title"] = "Bryllup";
 }
 
 <head>
@@ -70,6 +70,28 @@
         }
 
 
+        .spacing {
+            height: 0;
+        }
+
+        .image-block {
+            width: 100%;
+            height: 300px;
+        }
+
+        .img-box {
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
     </style>
 </head>
 
@@ -103,33 +125,59 @@
 
 
 <body>
-
-    <div class="container">
+    <div class="img-box">
         <div class="spacing"></div>
-        <div class="image-block" style="background:url(http://placekitten.com/1543/1024) no-repeat center center fixed;"></div>
-
+        <div class="image-block" style="background:url(../roses-1420719_1280.jpg) no-repeat center center fixed; opacity: 0.7;"></div>
         <div class="centered"><h1 style="text-align: center;">@ViewData["Title"]</h1></div>
     </div>
+
+    <hr />
+        <p style="text-align: center;">
+            Det ville være kedeligt, hvis nogle af livets vigtigste øjeblikke kun fik lov at vare det ene øjeblik. <br />
+            De skal foreviges på smukkeste vis.
+        </p>
+    <hr />
 
         <div id="img">
             <div class="row">
                 <div class="column">
-                <img src="../kite-1666816_1280.jpg" />
+                <img src="../bride-1255520_1280.jpg" />
                 </div>
                 <div class="column">
-                <img src="../bride-2566244_1280.jpg" style="box-sizing: border-box; width: 400px; height: 250px;" />
-                    <hr />    
-                        <p style="text-align: center;">
-                        Livet går så hurtigt! Bevar de gode stunder og vigtige minder forevigt på smukkeste vis. <br /> <br />
+                <img src="../sunset-698501_1280.jpg"/>
+                </div>
+                <div class="column">
+                <img src="../wedding-dress-1485984_1280.jpg" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                <img src="../wedding-1850074_1280.jpg" />
+                </div>
+                <div class="column">
+                <img src="../wedding-dress-1486260_1280.jpg" />
+                </div>
+                <div class="column">
+                <img src="../love-6600903_1280.jpg" />
+                </div>
+                <div class="column">
+                <img src="../wedding-1867547_1280.jpg" />
+                </div>
+                <div class="column">
+                <img src="../wedding-dresses-1486256_1280.jpg" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                <img src="../couple-1850073_1280.jpg" />
+                </div>
+                <div class="column">
+                <img src="../bride-2566244_1280.jpg" />
+                </div>
+                <div class="column">
+                <img src="../woman-4081760_1280.jpg" />
+                </div>
+            </div>
+        </div>
 
-                        Jeg nyder at skabe et kunstværk ud af disse øjeblikke, ligegyldigt om det er et bryllup, en koncert eller blot et herligt smil. Jeg nyder at fange de skæve vinkler og skabe noget særpræget og originalt, som ikke kan spottes med det blotte øje. Jeg nyder at sætte mit eget præg på det som jeg ser gennem kameraet.
-                        </p>
-                    <hr />
-                </div>
-                <div class="column">
-                <img src="../action-2178885_1280.jpg" />
-                </div>
-            </div>
-            </div>
-          
 </body>
