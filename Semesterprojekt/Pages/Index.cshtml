@@ -3,8 +3,92 @@
 @{
     ViewData["Title"] = "Home page";
 }
+<style>
+    .row {
+    display: flex;
+}
+img {
+    display: inline-block;
+    width: 30%;
+}
+.column {
+    
+    flex: 33.3%;
+    padding: 0px;
+}
+#About{
+    background-color: rgb(46, 139, 87, 0.25);
+    box-shadow: 20px 20px 20px /* #98FB98; */
+    font-family: Georgia;
+    padding: 25px 25px;
+    margin: 11px;
+    margin-top: 50px;
+}
 
+</style>
+
+<body>
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Julie Spuhr Foto</h1>
+</div
+
+@* <h1>
+<div>
+    <div class="column">
+        <img src="../Frontimage/JulieSpuhr2.jpg" />
+    </div>
 </div>
+<section>
+    <div class="text-end" id="About" name="AboutJulie" rows="6" cols="50">
+        <p>
+            Mit navn er Julie og jeg er 24 år gammel.
+            Med min store passion indenfor fotografiets kunst,
+            tog jeg i starten af 2018 en stor og helhjertet beslutning om at blive iværksætter og bygge min egen virksomhed op,
+            hvor formålet skulle være at vågne op og elske mit arbejde hver dag. Hvilket er lykkedes!
+        </p>
+    </div>
+</section>
+</h1> *@
+<h1>
+    <section>
+        <div ="row">
+    <div class="column">
+        <img src="../Frontimage/JulieSpuhr2.jpg" />
+    </div>
+    <div class="text-end" id="About" name="AboutJulie" rows="6" cols="50">
+        <p>
+            Mit navn er Julie og jeg er 24 år gammel.
+            Med min store passion indenfor fotografiets kunst,
+            tog jeg i starten af 2018 en stor og helhjertet beslutning om at blive iværksætter og bygge min egen virksomhed op,
+            hvor formålet skulle være at vågne op og elske mit arbejde hver dag. Hvilket er lykkedes!
+        </p>
+        </div>
+    </div>
+    </section>
+</h1>
+<h2>
+<div>
+    <section>
+        <div ="row">
+    <div class="column">
+        <img src="../Frontimage/JulieSpuhr3.jpg"/>
+    </div>
+</div>
+    <p id="Mission" name="MissionJulie" rows="6" cols="50">
+        Julie Spuhr Foto, er skabt på baggrund af min ekstreme interesse inden for fotografiets kunst. 
+        Fotografering skaber, for mig, 
+        en unik mulighed for at fastholde netop det ene øjeblik, som vi aldrig får igen.
+        Jeg nyder at skabe et kunstværk ud af disse øjeblikke, ligegyldigt om det er et bryllup, 
+        en koncert eller blot et herligt smil. Jeg nyder at fange de skæve vinkler og skabe noget særpræget og originalt, 
+        som ikke kan spottes med det blotte øje. 
+        Jeg nyder at sætte mit eget præg på det som jeg ser gennem kameraet.
+    </p>
+    </div>
+</section>
+</h2>
+<footer>
+    <div class="container">
+            &copy; 2023 - Semesterprojekt - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+</footer>
+</body>
