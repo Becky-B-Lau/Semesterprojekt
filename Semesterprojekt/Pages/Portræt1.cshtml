@@ -1,11 +1,22 @@
 ﻿@page
-@model Semesterprojekt.Pages.ServiceModel
+@model Semesterprojekt.Pages.PortrætModel
 @{
-    ViewData["Title"] = "Service";
+  ViewData["Title"] = "Portræt";
     }
 
-    <head>
-        <style>
+<head>
+    <style>
+        .box {
+            text-align: center;
+            float: left;
+            width: 350px;
+            margin-left: 135px;
+            margin-top: 10px;
+            padding: 5px;
+            border: 2px solid black;
+            background-color: lightgray;
+        }
+
         body {
             font-family: "Lato", sans-serif;
         }
@@ -71,8 +82,8 @@
             transform: translate(-50%, -50%);
         }
 
-        </style>
-    </head>
+    </style>
+</head>
 
 
 <div id="mySidenav" class="sidenav">
@@ -96,32 +107,76 @@
         document.getElementById("mySidenav").style.width = "0";
         document.getElementById("main").style.marginLeft = "0";
     }
+
 </script>
 
-    <body>
+
+<a href="c:\users\lindb\documents\github\semesterprojekt\semesterprojekt\pages\portræt.cshtml"></a>
+<a href="c:\users\lindb\documents\github\semesterprojekt\semesterprojekt\pages\portræt.cshtml.cs"></a>
+
+
+<body>
 
     <div class="img-box">
         <div class="spacing"></div>
-        <div class="image-block" style="background:url(../Images/Service-Images/Roskilde.jpg) no-repeat center center fixed; opacity: 0.7;"></div>
+        <div class="image-block" style="background:url(../Images/Service-Images/Portræt.jpg) no-repeat center center fixed; opacity: 0.7;"></div>
         <div class="centered"><h1 style="text-align: center;">@ViewData["Title"]</h1></div>
     </div>
 
-
-<hr />
-<p>
-    <center>
-            Mine leverancer er altid af højeste kvalitet, og mit mål er at både du som kunde og jeg selv som fotograf, er tilfredse med resultatet før ordren afsluttes.
-            Kontakt mig endelig, så vi kan finde ud af hvilken pakke, der passer bedst til din fotografering.
-    </center>
-</p>
-
+    <hr />
+    <p>
+        <center>
+            Jeg tilbyder skræddersyede portrætfotos til det behov du ønsker. Om det er til linkedIn, sociale medier eller til at have stående på reolen hjemme i stuen. Nedenunder kan du se, hvilke pakker jeg tilbyder:
+        </center>
+    </p>
     <hr />
 
-    <h6>
-        <center>
-            Klik "Åbn" øverst til venstre, for at se pakkerne.
-        </center>
-    </h6>
-<hr />
+    <h3><center>Priser</center></h3>
+    <br />
 
+    <div class="box">
+
+        <h5>Pakke nr. 1</h5>
+        <h6><i>Værdi: 2500kr</i></h6>
+        <br />
+        <p><u>Pakkens indhold:</u></p>
+        <ul>
+            <li>20 portrætter 1-3 personer</li>
+        </ul>
+
+        <p>Max 45 minutters fotografering</p>
+
+
+
+    </div>
+
+    <div class="box">
+
+        <h5>Pakke nr. 2</h5>
+        <h6><i>Værdi: 5000kr</i></h6>
+        <br />
+        <p><u>Pakkens indhold:</u></p>
+        <ul>
+            <li>50 portrætter 4-10 personer</li></li>
+        </ul>
+
+        <p>Max 60 minutters fotografering</p>
+
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <center><p>Hvis andet tilbud end de 2 ovenstående ønskes. Så kontakt mig endelig, så skræddersyer vi sammen et tilbud der matcher jeres behov.</p></center>
 </body>
