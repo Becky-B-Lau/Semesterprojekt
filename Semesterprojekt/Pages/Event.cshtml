@@ -1,11 +1,22 @@
 ﻿@page
-@model Semesterprojekt.Pages.ServiceModel
+@model Semesterprojekt.Pages.EventModel
 @{
-    ViewData["Title"] = "Service";
-    }
+    ViewData["Title"] = "Event";
+}
 
-    <head>
-        <style>
+<head>
+    <style>
+        .box {
+            text-align: center;
+            float: left;
+            width: 350px;
+            margin-left: 135px;
+            margin-top: 10px;
+            padding: 5px;
+            border: 2px solid black;
+            background-color: lightgray;
+        }
+
         body {
             font-family: "Lato", sans-serif;
         }
@@ -71,8 +82,9 @@
             transform: translate(-50%, -50%);
         }
 
-        </style>
-    </head>
+
+    </style>
+</head>
 
 
 <div id="mySidenav" class="sidenav">
@@ -98,30 +110,64 @@
     }
 </script>
 
-    <body>
+<body>
 
     <div class="img-box">
         <div class="spacing"></div>
-        <div class="image-block" style="background:url(../Images/Service-Images/Roskilde.jpg) no-repeat center center fixed; opacity: 0.7;"></div>
+        <div class="image-block" style="background:url(../Images/Service-Images/Eventtt.jpg) no-repeat center center fixed; opacity: 0.7;"></div>
         <div class="centered"><h1 style="text-align: center;">@ViewData["Title"]</h1></div>
     </div>
 
-
-<hr />
-<p>
-    <center>
-            Mine leverancer er altid af højeste kvalitet, og mit mål er at både du som kunde og jeg selv som fotograf, er tilfredse med resultatet før ordren afsluttes.
-            Kontakt mig endelig, så vi kan finde ud af hvilken pakke, der passer bedst til din fotografering.
-    </center>
-</p>
-
+    <hr />
+    <p>
+        <center>
+            Jeg hjælper jer med at fremstille jeres event som i ønsker. Om det er festlige, hyggelige eller noget helt tredje.
+        </center>
+    </p>
     <hr />
 
-    <h6>
-        <center>
-            Klik "Åbn" øverst til venstre, for at se pakkerne.
-        </center>
-    </h6>
-<hr />
+    <h3><center>Priser</center></h3>
+    <br />
 
+    <div class="box">
+
+        <h5>Pakke nr. 2</h5>
+        <h6><i>Værdi: 7500kr</i></h6>
+        <br />
+        <p><u>Pakkens indhold:</u></p>
+        <ul>
+            <li>150 billeder over 1 dag</li>
+            <li>20 portrætter af 5-10 medarbejdere</li>
+        </ul>
+
+
+
+    </div>
+
+    <div class="box">
+
+        <h5>Pakke nr. 1</h5>
+        <h6><i>Værdi: 20.000kr</i></h6>
+        <br />
+        <p><u>Pakkens indhold:</u></p>
+        <ul>
+            <li>500 billeder over 5 dage</li>
+            <li>20 portrætter af 5-10 medarbejdere</li>
+        </ul>
+
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+
+    <center><p>Hvis andet tilbud end de 2 ovenstående ønskes. Så kontakt mig endelig, så skræddersyer vi sammen et tilbud der matcher jeres behov.</p></center>
 </body>
