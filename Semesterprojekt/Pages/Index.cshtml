@@ -6,15 +6,12 @@
 <style>
 .row {
     display: flex;
-}
-img {
-    float: left;
-    width: 30%;
+    padding: 20px;
 }
 .column {
     
-    flex: 33.3%;
-    padding: 0px;
+    flex: 50%;
+    padding: 10px;
 }
 #About{
     background-color: rgb(46, 139, 87, 0.25);
@@ -33,53 +30,72 @@ img {
     margin-top: 50px;
 }
 
+img{
+        width: 100%;
+        height: 100%;
+}
+
+
+
 </style>
 
+
 <body>
+    <hr />
 <div class="text-center">
     <h1 class="display-4">Julie Spuhr Foto</h1>
 </div>
+<hr />
 <p>
     <section>
-        <div class="row">
-            <div class ="column">
-                <img src="../Frontimage/JulieSpuhr2.jpg" />
-                    <div class="text-end" id="About" name="AboutJulie" rows="6" cols="50">
-                        <p>
-                            Mit navn er Julie og jeg er 24 år gammel.
-                            Med min store passion indenfor fotografiets kunst,
-                            tog jeg i starten af 2018 en stor og helhjertet beslutning om at blive iværksætter og bygge min egen virksomhed op,
-                            hvor formålet skulle være at vågne op og elske mit arbejde hver dag. Hvilket er lykkedes!
-                        </p>
-                    </div>
-                </div>
-                
-
+<div id="img">
+    <div class ="row">
+        <div class="column">
+            <img src="../Frontimage/JulieSpuhr2.jpg" />
         </div>
+            <div class="column">
+                <div class="text-end" id="About" name="AboutJulie">
+                    <p style="font-size: 25px;">
+                        Mit navn er Julie og jeg er 24 år gammel.
+                        Med min store passion indenfor fotografiets kunst,
+                        tog jeg i starten af 2018 en stor og helhjertet beslutning om at blive iværksætter og bygge min egen virksomhed op,
+                        hvor formålet skulle være at vågne op og elske mit arbejde hver dag. Hvilket er lykkedes!
+                    </p>
+                </div>                            
+            </div>
+    </div>
+</div>
+        
     </section>
 </p>
+<br />
+<br />
+<br />
 <p>
 <div>
     <section>
-        <div class ="row">
-            <div class ="column">
-                <img src="../Frontimage/JulieSpuhr3.jpg"/>
-                        <div>
-                            <p id="Mission" name="MissionJulie" rows="6" cols="50">
-                                Julie Spuhr Foto, er skabt på baggrund af min ekstreme interesse inden for fotografiets kunst.
-                                Fotografering skaber, for mig,
-                                en unik mulighed for at fastholde netop det ene øjeblik, som vi aldrig får igen.
-                                Jeg nyder at skabe et kunstværk ud af disse øjeblikke, ligegyldigt om det er et bryllup,
-                                en koncert eller blot et herligt smil. Jeg nyder at fange de skæve vinkler og skabe noget særpræget og originalt,
-                                som ikke kan spottes med det blotte øje.
-                                Jeg nyder at sætte mit eget præg på det som jeg ser gennem kameraet.
-                            </p>
-                        </div>
+        <div id=" img">
+            <div class=" row">
+                <div class="column">
+                    <div id="Mission" name="MissionJulie">
+                        <p style="font-size: 25px;">
+                            Julie Spuhr Foto, er skabt på baggrund af min ekstreme interesse inden for fotografiets kunst.
+                            Fotografering skaber, for mig,
+                            en unik mulighed for at fastholde netop det ene øjeblik, som vi aldrig får igen.
+                            Jeg nyder at skabe et kunstværk ud af disse øjeblikke, ligegyldigt om det er et bryllup,
+                            en koncert eller blot et herligt smil. Jeg nyder at fange de skæve vinkler og skabe noget særpræget og originalt,
+                            som ikke kan spottes med det blotte øje.
+                            Jeg nyder at sætte mit eget præg på det som jeg ser gennem kameraet.
+                        </p>
+                    </div>
+                </div>
+                            <div class=" column">
+                                <img src="../Frontimage/JulieSpuhr3.jpg" />
+                            </div>
             </div>
-            
         </div>
+        
     </section>
 </div>
-</p>
 
 </body>
