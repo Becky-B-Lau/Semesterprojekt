@@ -9,7 +9,6 @@
   <ItemGroup>
     <Content Remove="Pages\Shared\Order.cshtml" />
     <Content Remove="wwwroot\Frontimage\JulieSpuhr2.jpg" />
-    <Content Remove="wwwroot\Frontimage\JulieSpuhr3.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -33,8 +32,6 @@
 
   <ItemGroup>
     <None Include="Pages\Order.cshtml" />
-    <None Include="wwwroot\Frontimage\JulieSpuhr2.jpg" />
-    <None Include="wwwroot\Frontimage\JulieSpuhr3.jpg" />
   </ItemGroup>
 
 </Project>
