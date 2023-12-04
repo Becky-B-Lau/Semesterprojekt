@@ -6,7 +6,7 @@
     body::after {
         content: '';
         display: block;
-        height: 150px; /* Set same as footer's height */
+        height: 160px; /* Set same as footer's height */
     }
 
 footer {
