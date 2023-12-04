@@ -19,6 +19,7 @@
     <Folder Include="wwwroot\Images\Koncerter-Images\" />
     <Folder Include="wwwroot\Images\Mode-Images\" />
     <Folder Include="wwwroot\Images\Mad-Images\" />
+    <Folder Include="wwwroot\Images\Footer-Images\" />
     <Folder Include="wwwroot\Images\Portræt-Images\" />
   </ItemGroup>
 
