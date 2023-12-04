@@ -7,6 +7,8 @@ namespace Semesterprojekt.Pages
     {
         [BindProperty]
         public Models.Kunde Kunde { get; set; }
+        [BindProperty]
+        public Models.Ordre Ordre { get; set; }
         private readonly ILogger<ContactModel> _logger;
 
         public ContactModel(ILogger<ContactModel> logger)
