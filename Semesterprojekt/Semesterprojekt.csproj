@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <Content Remove="Pages\Shared\Order.cshtml" />
+    <Content Remove="wwwroot\Frontimage\JulieSpuhr2.jpg" />
   </ItemGroup>
 
   <ItemGroup>
