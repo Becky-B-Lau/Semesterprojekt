@@ -8,11 +8,15 @@
 <head>
     
     <style>
-        
+        .Alle
+        {
+         position: relative;   
+        }
         .Kontakt {
             position: absolute;
             top: 200px;
-            left: 750px;
+            left: 600px;
+            
         }
         
         .pKontakt {
@@ -27,7 +31,7 @@
             resize: none;
             overflow: auto;
         }
-
+        
    
     </style>
 </head>
@@ -36,45 +40,73 @@
     <h1> <center> @ViewData["Title"]</center></h1>
    <hr />
     
-    <div class="form">
+   <div class="Alle"
+    <div class="form" id="Form-gruppe">
         <form method="post">
+            
             <div class="form-group">
-                
-                    <label for="Navn">Navn:</label> <br />
-                    <input type="text" class="text-box" id="Navn" name="Navn">
+
+                <label asp-for="@Model.Kunde.Navn">Navn:</label> <br />
+                <input asp-for="@Model.Kunde.Navn" class="text-box"> <br />
+                <span asp-validation-for="@Model.Kunde.Navn" class="text-danger"></span>
              
             </div>
             <div class="form-group">
-                
-                    <label for="Email">Email:</label> <br />
-                <input type="text" class="text-box" id="Email" name="Email">
+
+                <label asp-for="@Model.Kunde.Email">Email:</label> <br />
+                <input asp-for="@Model.Kunde.Email" class="text-box"> <br />
+                <span asp-validation-for="@Model.Kunde.Email" class="text-danger"></span>
                 
             </div>
             <div class="form-group">
                 <div class="text-box">
-                    <label for="Adresse"> Adresse</label> <br />
-                    <input type="text" class="text-box" id="Adresse" name="Adresse" />
+                    <label asp-for="@Model.Kunde.Adresse"> Adresse</label> <br />
+                    <input asp-for="@Model.Kunde.Adresse" class="text-box" /> <br />
+                    <span asp-validation-for="@Model.Kunde.Adresse" class="text-danger"></span>
                 </div>
             </div>
 
             <div class="form-group">
-            
-                    <label for="Telefonnummer">Telefonnummer:</label> <br />
-                    <input for="text" class="text-box" id="Telefonnummer" name="Telefonnummer" />
+
+                <label asp-for="@Model.Kunde.Telefonnummer">Telefonnummer:</label> <br />
+                <input asp-for="@Model.Kunde.Telefonnummer" class="text-box" /> <br />
+                <span asp-validation-for="@Model.Kunde.Telefonnummer" class="text-danger"></span>
              
             </div>
             <div class="form-group">
-                
-                    <label for="Alder">Alder:</label> <br />
-                    <input for="text" class="text-box" id="Alder" name="Alder" />
-          
+
+                <label asp-for="@Model.Kunde.Alder">Alder:</label> <br />
+                <input asp-for="@Model.Kunde.Alder" class="text-box" /> <br />
+                <span asp-validation-for="@Model.Kunde.Alder" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <select name="Pakke" class="text-box">
+                    <option value="Erhverv - Pakke 1">Erhverv - Pakke 1</option>
+                    <option value="Erhverv - Pakke 2">Erhverv - Pakke 2</option>
+                    <option value="Portræt - Pakke 1" selected="selected">Portræt - Pakke 1</option>
+                    <option value="Portræt - Pakke 2">Portræt - Pakke 2</option>
+                    <option value="Event - Pakke 1">Event - Pakke 1</option>
+                    <option value="Event - Pakke 2">Event - Pakke 2</option>
+                </select>
             </div>
 
             <div class="form-group">
-                <input type="radio" id="Erhverv" name="Erhverv_Eller_Privat" value="Erhverv">
-                <label for="Erhverv">Erhverv</label> <br />
-                <input type="radio" id="Privat" class="Privat" name="Erhverv_Eller_Privat" value="Privat">
-                <label for="Privat">Privat</label><br>
+                @if (ModelState.IsValid)
+                {
+                    <input type="radio" id="Erhverv" name="Erhverv_Eller_Privat" value="Erhverv">
+                    <label for="Erhverv">Erhverv</label> <br />
+                    <input type="radio" id="Privat" class="Privat" name="Erhverv_Eller_Privat" value="Privat">
+                    <label for="Privat">Privat</label><br>
+                }
+                else
+                {
+                    <div class="text-danger">
+                <p>Du skal vælge en af mulighederne</p>
+                        <input type="radio" name="Erhverv_Eller_Privat" value="Erhverv"> Erhverv <br>
+                        <input type="radio" name="Erhverv_Eller_Privat" value="Privat"> Privat
+                  
+                </div>
+                }
             </div>
             <div class="form-group">
                 <label for="Ønske"> Hvad du henvender dig med:</label> <br />
@@ -82,13 +114,18 @@
            
             </div>
             <div class="form-group">
-                <input type="submit" onclick="alert('Tak for din interesse.')" id="Send" value="Send" class="btn btn-primary" />
+                <input type="submit" onclick="validateForm()" id="Send" value="Send" class="btn btn-primary" />
             </div>
             
         </form>
-</div>
-   
-
+    </div>
+    <script>
+        function validateForm() 
+        {
+           var form = document.getElementsByName()
+        }
+    </script>
+  
     <div class="Kontakt">
 <div class="Map">
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2275.3724687226036!2d11.768782!3d55.229217399999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4652be88d0e7faf3%3A0xc06bc6d747cff2a4!2sFarimagsvej%2045%2C%204700%20N%C3%A6stved!5e0!3m2!1sda!2sdk!4v1701346550916!5m2!1sda!2sdk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -97,10 +134,11 @@
 <p> Kontakt oplysninger: </p>
 <p>
     Adresse: Farimagsvej 45, 4700 Næstved <br />
-    Telefon : 23 888 45 <br />
+    Telefon : 23 88 84 56 <br />
     Email : privat@juliespuhr.dk
     
 </p>
+</div>
 </div>
 </div>
 </body>
