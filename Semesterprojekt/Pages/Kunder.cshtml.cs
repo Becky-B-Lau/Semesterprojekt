@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Semesterprojekt.Models;
 
 namespace Semesterprojekt.Pages
 {
@@ -7,6 +8,7 @@ namespace Semesterprojekt.Pages
     {
         public void OnGet()
         {
+
         }
     }
 }
