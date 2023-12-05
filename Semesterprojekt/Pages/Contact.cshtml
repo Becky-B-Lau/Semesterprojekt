@@ -43,51 +43,51 @@
    <hr />
     
    <div class="Alle"
-    <div class="form" id="form">
+    <div class="form">
         <form method="post"  asp-page="/Order">
             
             <div class="form-group">
 
-                 <label asp-for="@Model.Ordre.DateTime">Dato:</label> <br />
-                <input asp-for="@Model.Ordre.DateTime" class="text-box"> <br />
-                <span asp-validation-for="@Model.Ordre.DateTime" class="text-danger"></span>
+                <label asp-for="Ordre.DateTime">Dato:</label> <br />
+                <input asp-for="Ordre.DateTime" class="text-box"> <br />
+                <span asp-validation-for="Ordre.DateTime" class="text-danger"></span>
 
             </div>
 
             <div class="form-group">
 
-                <label asp-for="@Model.Kunde.Navn">Navn:</label> <br />
-                <input asp-for="@Model.Kunde.Navn" class="text-box"> <br />
-                <span asp-validation-for="@Model.Kunde.Navn" class="text-danger"></span>
+                <label asp-for="Kunde.Navn">Navn:</label> <br />
+                <input asp-for="Kunde.Navn" class="text-box"> <br />
+                <span asp-validation-for="Kunde.Navn" class="text-danger"></span>
              
             </div>
             <div class="form-group">
 
-                <label asp-for="@Model.Kunde.Email">Email:</label> <br />
-                <input asp-for="@Model.Kunde.Email" class="text-box"> <br />
-                <span asp-validation-for="@Model.Kunde.Email" class="text-danger"></span>
+                <label asp-for="Kunde.Email">Email:</label> <br />
+                <input asp-for="Kunde.Email" class="text-box"> <br />
+                <span asp-validation-for="Kunde.Email" class="text-danger"></span>
                 
             </div>
             <div class="form-group">
-                <div class="text-box">
-                    <label asp-for="@Model.Kunde.Adresse"> Adresse</label> <br />
-                    <input asp-for="@Model.Kunde.Adresse" class="text-box" /> <br />
-                    <span asp-validation-for="@Model.Kunde.Adresse" class="text-danger"></span>
-                </div>
+                
+                    <label asp-for="Kunde.Adresse"> Adresse</label> <br />
+                    <input asp-for="Kunde.Adresse" class="text-box" /> <br />
+                    <span asp-validation-for="Kunde.Adresse" class="text-danger"></span>
+              
             </div>
 
             <div class="form-group">
 
-                <label asp-for="@Model.Kunde.Telefonnummer">Telefonnummer:</label> <br />
-                <input asp-for="@Model.Kunde.Telefonnummer" class="text-box" /> <br />
-                <span asp-validation-for="@Model.Kunde.Telefonnummer" class="text-danger"></span>
+                <label asp-for="Kunde.Telefonnummer">Telefonnummer:</label> <br />
+                <input asp-for="Kunde.Telefonnummer" class="text-box" /> <br />
+                <span asp-validation-for="Kunde.Telefonnummer" class="text-danger"></span>
              
             </div>
             <div class="form-group">
 
-                <label asp-for="@Model.Kunde.Alder">Alder:</label> <br />
-                <input asp-for="@Model.Kunde.Alder" class="text-box" /> <br />
-                <span asp-validation-for="@Model.Kunde.Alder" class="text-danger"></span>
+                <label asp-for="Kunde.Alder">Alder:</label> <br />
+                <input asp-for="Kunde.Alder" class="text-box" /> <br />
+                <span asp-validation-for="Kunde.Alder" class="text-danger"></span>
             </div>
             
             @*
@@ -107,18 +107,18 @@
             <div class="form-group">
                
                     <input type="radio" id="Erhverv" name="Erhverv_Eller_Privat" value="Erhverv">
-                    <label asp-for="@Model.Kunde.Erhverv">Erhverv</label> <br />
+                    <label asp-for="Kunde.Erhverv">Erhverv</label> <br />
                     <input type="radio" id="Privat" name="Erhverv_Eller_Privat" value="Privat">
-                    <label asp-for="@Model.Kunde.Privat">Privat</label><br>
+                    <label asp-for="Kunde.Privat">Privat</label><br>
                         
                 </div>
             <div class="form-group">
-                <label asp-for="@Model.Ordre.Beskrivelse"> Hvad du henvender dig med:</label> <br />
-                <textarea asp-for="@Model.Ordre.Beskrivelse"id="Beskrivelse" rows="4" cols="50"> </textarea> <br />
-                <span asp-validation-for="@Model.Ordre.Beskrivelse" class="text-danger"></span>
+                <label asp-for="Ordre.Beskrivelse"> Hvad du henvender dig med:</label> <br />
+                <textarea asp-for="Ordre.Beskrivelse"id="Beskrivelse" rows="4" cols="50"> </textarea> <br />
+                <span asp-validation-for="Ordre.Beskrivelse" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" id="Send"  onclick="alert('Tak for din interesse.')" value="Create" class="btn btn-primary" />
+                <input type="submit" id="Send"  onclick="alert('Tak for din interesse.')" value="Send" class="btn btn-primary" />
             </div>
             
         </form>
