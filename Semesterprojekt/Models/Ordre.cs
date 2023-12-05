@@ -4,7 +4,9 @@ namespace Semesterprojekt.Models
 {
 	public class Ordre
 	{
-		private int Id { get; set; }
+		public int id {get;} 
+		private static int Id = 1;
+
         [Display(Name = "Dato")]
         [Required(ErrorMessage = "Du skal angive en dato")]
         public DateTime? DateTime { get; set; }
@@ -15,16 +17,17 @@ namespace Semesterprojekt.Models
 		public double Pakke { get; set; }
 		public bool Godkendt { get; set; }
 
+
 		public Ordre() { }
 
-		public Ordre(int id, DateTime datetime, Kunde kunde, string beskrivelse, double pakke, bool godkendt)
+		public Ordre(DateTime dateTime, Kunde kunde, string beskrivelse)
 		{
-			Id = id++;
-			DateTime = datetime;
-			Kunde = kunde;
+			id = Id++;
+			DateTime = dateTime;
+			Kunde = kunde; //hvordan henter jeg kunde.navn osv?
 			Beskrivelse = beskrivelse;
-			Pakke = pakke;
-			Godkendt = godkendt;
+			//Pakke = pakke;
+			//Godkendt = godkendt;
 		}
 
 		//UpdateOrdre

@@ -1,4 +1,5 @@
 ﻿@page
+@using Semesterprojekt.Models;
 @model OrderModel
 @{
 	ViewData["Title"] = "Ordreoversigt";
@@ -41,6 +42,9 @@
 					OrdreId
 				</th>
 				<th>
+					Dato
+				</th>
+				<th>
 					Navn
 				</th>
 				<th>
@@ -50,17 +54,21 @@
 					Addresse
 				</th>
 				<th>
-					Telefonnummer
+					Telefon
 				</th>
-				<th>
+				@*<th>
 					Alder
 				</th>
+				*@
+
 				<th>
-					Type
+					Beskrivelse
 				</th>
-				<th>
+
+				@*<th>
 					Pris
-				</th>
+				  </th>*@
+			
 				<th>
 					Bekræft / Afvis Ordre
 				</th>
@@ -69,30 +77,51 @@
 		</thead>
 
 		<tbody>
-		<td>
-		</td>
-		<td>
-		</td>
-		<td>
-		</td>
-		<td>
-		</td>
-		<td>
-		</td>
-		<td>
-		</td>
-		<td>
-		</td>
-		<td>
-		</td>
-		<td>
-			<div class="form-group" style="margin:5px;">
-				<input type="submit" onclick="alert('Du har accepteret Ordren. Bekræftelsesmail er sent til Kunden.')" id="Send" value="Accepter" class="btn btn-primary" />
+			@if (Model.Items != null)
+			{
+                foreach (var item in Model.Items)
+                {
+					<tr>
+						<td>
+							@item.id @*Har ændret Id fra private til public i Ordre.cs *@
+						</td> 
 
-				<input type="submit" onclick="alert('Du har afvist Ordren. Bekræftelsesmail er sent til Kunden.')" id="Send" value="Afvis" class="btn btn-primary" />
-			</div>
+						<td>
+							@item.DateTime
+						</td>
 
-		</td>
+						<td>
+							@item.Kunde.Navn
+						</td>
+
+						<td>
+							@item.Kunde.Email
+						</td>
+
+						<td>
+							@item.Kunde.Adresse
+						</td>
+
+						<td>
+							@item.Kunde.Telefonnummer
+						</td>
+						<td>
+							@item.Beskrivelse
+						</td>
+
+						<td>
+							<div class="form-group" style="margin:5px;">
+								<input type="submit" onclick="alert('Du har accepteret Ordren. Bekræftelsesmail er sent til Kunden.')" id="Send" value="Accepter" class="btn btn-primary" />
+
+								<input type="submit" onclick="alert('Du har afvist Ordren. Bekræftelsesmail er sent til Kunden.')" id="Send" value="Afvis" class="btn btn-primary" />
+							</div>
+
+						</td>
+					</tr>
+
+				}
+			}
+		
 
 		</tbody>
 
