@@ -27,14 +27,6 @@ namespace Semesterprojekt.Pages.Workshops
             return Page();
         }
 
-        [BindProperty] public int MinPrice { get; set; }
-        [BindProperty] public int MaxPrice { get; set; }
-        public IActionResult OnPostPriceFilter()
-        {
-            Workshops = _workshopService.PriceFilter(MinPrice).ToList();
-            Workshops = _workshopService.PriceFilter(MaxPrice).ToList();
-            return Page();
-        }
 
     }
 }
