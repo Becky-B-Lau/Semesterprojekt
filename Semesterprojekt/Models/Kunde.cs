@@ -3,7 +3,7 @@
 
     public class Kunde : Person
     {
-       public bool Erhverv { get; set; }
+        public bool Erhverv { get; set; }
         public bool Privat { get; set; }
         public int Kundeid { get; }
         private static int KundeId = 1;

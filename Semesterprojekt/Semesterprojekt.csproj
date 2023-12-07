@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Pages\Kunder.cshtml" />
     <Content Remove="Pages\Shared\Order.cshtml" />
     <Content Remove="wwwroot\Frontimage\JulieSpuhr2.jpg" />
   </ItemGroup>
@@ -25,17 +24,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <_ContentIncludedByDefault Remove="Pages\Kunder.cshtml" />
     <_ContentIncludedByDefault Remove="Pages\Shared\Order.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Pages\Kunder.cshtml" />
     <None Include="Pages\Order.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Pages\Kunder.cshtml" />
   </ItemGroup>
 
 </Project>
