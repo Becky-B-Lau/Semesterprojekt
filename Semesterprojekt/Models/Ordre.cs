@@ -18,7 +18,7 @@ namespace Semesterprojekt.Models
 		public bool Godkendt { get; set; }
 
 
-		public Ordre() { }
+		public Ordre() { id = Id++; }
 
 		public Ordre(DateTime dateTime, Kunde kunde, string beskrivelse)
 		{

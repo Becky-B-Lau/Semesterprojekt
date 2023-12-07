@@ -13,8 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="MockData\" />
-    <Folder Include="Service\" />
     <Folder Include="wwwroot\Images\Familie-Images\" />
     <Folder Include="wwwroot\Images\Koncerter-Images\" />
     <Folder Include="wwwroot\Images\Mode-Images\" />
