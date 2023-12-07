@@ -7,10 +7,12 @@
         }
 
         public double Pris {  get; set; }
+        
 
         public Billeder(double pris)
         {
             Pris = pris;
+           
         }
     }
 }
