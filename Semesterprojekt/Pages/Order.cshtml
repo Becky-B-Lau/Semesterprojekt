@@ -79,7 +79,7 @@
 		<tbody>
 			@if (Model.Items != null)
 			{
-				foreach (var item in Model.Items.OrderByDescending(i => i.DateTime))
+				foreach (var item in Model.Items.OrderByDescending(i => i.id))
                 {
 					<tr>
 						<td>
