@@ -3,6 +3,7 @@
 @{
 }
 <html>
+    <head>
     <style>
     *,
     *:before,
@@ -301,6 +302,7 @@
         transform: translate3d(0, 0, 0);
     }
     </style>
+</head>
     <body>
     <br>
     <br>
@@ -309,25 +311,25 @@
             <h2>Velkommen</h2>
             <label>
                 <span>Email</span>
-                <input type="email" />
+                <input type="email" onFocus="this.value=''" />
             </label>
             <label>
                 <span>Adgangskode</span>
-                <input type="password" />
+                <input type="password" onFocus="this.value=''" />
             </label>
             <p class="forgot-pass">Glemt adgangskode?</p>
-            <button type="button" onclick="alert('Du er nu logget ind.')" class="submit">Log ind</button>
+            <button type="button" onclick=" window.location.href='/Index' ;" class="submit">Log ind</button>
 
         </div>
         <div class="sub-cont">
             <div class="img">
                 <div class="img__text m--up">
 
-                    <h3>Har du ikke en bruger? Opret en her:<h3>
+                    <h3>Har du ikke en bruger? Opret en her:</h3>
                 </div>
                 <div class="img__text m--in">
 
-                    <h3>Hvis du allerede har en bruger, så bare log ind.<h3>
+                    <h3>Hvis du allerede har en bruger, så bare log ind.</h3>
                 </div>
                 <div class="img__btn">
                     <span class="m--up">Opret</span>
@@ -348,7 +350,8 @@
                     <span>Adgangskode</span>
                     <input type="password" />
                 </label>
-                <button type="button" onclick="alert('Du har nu oprettet en bruger.')" class="submit">Opret</button>
+                <button type="button" onclick=" window.location.href='/LogInd' ;" class="submit">Opret</button>
+
 
             </div>
         </div>
