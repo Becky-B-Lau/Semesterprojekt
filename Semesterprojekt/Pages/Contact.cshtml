@@ -54,7 +54,15 @@
                 <span asp-validation-for="Ordre.DateTime" class="text-danger"></span>
 
             </div>
+            <div class="form-group">
 
+                 <label asp-for="Ordre.Kunde.Type"> Type:</label> <br />
+                    <select asp-for="Ordre.Kunde.Type" class="text-box">
+                        <option value="Privat">Privat</option>
+                        <option value="Erhverv">Erhverv</option>
+                    </select>
+
+            </div>
             <div class="form-group">
 
                 <label asp-for="Ordre.Kunde.Navn">Navn:</label> <br />
@@ -89,47 +97,37 @@
                 <label asp-for="Ordre.Kunde.Alder">Alder:</label> <br />
                 <input asp-for="Ordre.Kunde.Alder" class="text-box" /> <br />
                 <span asp-validation-for="Ordre.Kunde.Alder" class="text-danger"></span>
+
+            </div>     
+
+            <div class="form-group">
+
+            <label asp-for="Ordre.Billeder.Pris"> Pakke: </label> <br />
+            <select asp-for="Ordre.Billeder.Pris" class="text-box">
+                        <option value=""> Vælge en af valgmulighederne </option>
+                        <option value="4000">Erhverv - Pakke 1</option>
+                        <option value="6000">Erhverv - Pakke 2</option>
+                        <option value="2500" selected="selected">Portræt - Pakke 1</option>
+                        <option value="5000">Portræt - Pakke 2</option>
+                        <option value="7500">Event - Pakke 1</option>
+                        <option value="20000">Event - Pakke 2</option> 
+            </select>
+
             </div>
-            
-            
-              @*  <div class="form-group">
-
-                <label asp-for="Ordre.Pakke">Pakke: (fx Portræt - Pakke 1)</label> <br />
-                <input asp-for="Ordre.Pakke" class="text-box" /> <br />
-                <span asp-validation-for="Ordre.Pakke" class="text-danger"></span>
-            </div> *@
-
-           @*  @{ switch Ordre.Pakke
-
-             <div class="form-group">
-                 <label for="Ordre.Pakke">Select Package:</label> <br />
-                <select asp-for="Ordre.Pakke" class="text-box">
-                        <option value="PickPrice(1)">Erhverv - Pakke 1</option>
-                        <option value="PickPrice(2)">Erhverv - Pakke 2</option>
-                        <option value="PickPrice(3)" selected="selected">Portræt - Pakke 1</option>
-                        <option value="PickPrice(4)">Portræt - Pakke 2</option>
-                        <option value="PickPrice(5)">Event - Pakke 1</option>
-                        <option value="PickPrice(6)">Event - Pakke 2</option>
-                </select>
-            </div> 
-                } *@
 
 
+        
             <div class="form-group">
-               
-                    <input type="radio" id="Erhverv" name="Erhverv_Eller_Privat" value="Erhverv">
-                    <label asp-for="Ordre.Kunde.Erhverv">Erhverv</label> <br />
-                    <input type="radio" id="Privat" name="Erhverv_Eller_Privat" value="Privat">
-                    <label asp-for="Ordre.Kunde.Privat">Privat</label><br>
-                        
-                </div>
-            <div class="form-group">
+
                 <label asp-for="Ordre.Beskrivelse"> Hvad du henvender dig med:</label> <br />
                 <textarea asp-for="Ordre.Beskrivelse"id="Beskrivelse" rows="4" cols="50"> </textarea> <br />
                 <span asp-validation-for="Ordre.Beskrivelse" class="text-danger"></span>
+
             </div>
             <div class="form-group">
+
                 <input type="submit" id="Send"  onclick="alert('Tak for din interesse.')" value="Send" class="btn btn-primary" />
+
             </div>
             
         </form>
