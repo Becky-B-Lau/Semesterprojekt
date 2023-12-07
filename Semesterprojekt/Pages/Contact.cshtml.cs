@@ -25,17 +25,14 @@ namespace Semesterprojekt.Pages
         public IActionResult OnGet()
         {
 
-           
             return Page();
-            
+           
         }
 
         public IActionResult OnPost() 
         {
-           
             if (!ModelState.IsValid) 
             { return Page(); }
-           
             _itemService.AddItem(Ordre);
             return RedirectToPage("Order");
         
