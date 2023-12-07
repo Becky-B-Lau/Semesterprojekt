@@ -3,7 +3,6 @@
 
     public class Kunde : Person
     {
-        private int Id { get; set; }
         public bool Erhverv { get; set; }
         public bool Privat { get; set; }
         public int Kundeid { get; }
