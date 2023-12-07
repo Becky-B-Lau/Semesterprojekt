@@ -1,6 +1,7 @@
 ﻿@page
 @model Semesterprojekt.Pages.ContactModel
-@{
+@{ 
+    
     ViewData["Title"] = "Kontakt mig";
 }
 
@@ -43,84 +44,92 @@
    <hr />
     
    <div class="Alle"
-    <div class="form" id="form">
-        <form method="post"  asp-page="/Order">
+    <div class="form">
+        <form method="post">
             
             <div class="form-group">
-                 <label asp-for="@Model.Ordre.DateTime">Dato:</label> <br />
-                <input asp-for="@Model.Ordre.DateTime" class="text-box"> <br />
-                <span asp-validation-for="@Model.Ordre.DateTime" class="text-danger"></span>
 
-
+                <label asp-for="Ordre.DateTime">Dato:</label> <br />
+                <input asp-for="Ordre.DateTime" class="text-box"> <br />
+                <span asp-validation-for="Ordre.DateTime" class="text-danger"></span>
 
             </div>
 
             <div class="form-group">
 
-                <label asp-for="@Model.Kunde.Navn">Navn:</label> <br />
-                <input asp-for="@Model.Kunde.Navn" class="text-box"> <br />
-                <span asp-validation-for="@Model.Kunde.Navn" class="text-danger"></span>
+                <label asp-for="Ordre.Kunde.Navn">Navn:</label> <br />
+                <input asp-for="Ordre.Kunde.Navn" class="text-box"> <br />
+                <span asp-validation-for="Ordre.Kunde.Navn" class="text-danger"></span>
              
             </div>
             <div class="form-group">
 
-                <label asp-for="@Model.Kunde.Email">Email:</label> <br />
-                <input asp-for="@Model.Kunde.Email" class="text-box"> <br />
-                <span asp-validation-for="@Model.Kunde.Email" class="text-danger"></span>
+                <label asp-for="Ordre.Kunde.Email">Email:</label> <br />
+                <input asp-for="Ordre.Kunde.Email" class="text-box"> <br />
+                <span asp-validation-for="Ordre.Kunde.Email" class="text-danger"></span>
                 
             </div>
             <div class="form-group">
-                <div class="text-box">
-                    <label asp-for="@Model.Kunde.Adresse"> Adresse</label> <br />
-                    <input asp-for="@Model.Kunde.Adresse" class="text-box" /> <br />
-                    <span asp-validation-for="@Model.Kunde.Adresse" class="text-danger"></span>
-                </div>
+                
+                    <label asp-for="Ordre.Kunde.Adresse"> Adresse</label> <br />
+                    <input asp-for="Ordre.Kunde.Adresse" class="text-box" /> <br />
+                    <span asp-validation-for="Ordre.Kunde.Adresse" class="text-danger"></span>
+              
             </div>
 
             <div class="form-group">
 
-                <label asp-for="@Model.Kunde.Telefonnummer">Telefonnummer:</label> <br />
-                <input asp-for="@Model.Kunde.Telefonnummer" class="text-box" /> <br />
-                <span asp-validation-for="@Model.Kunde.Telefonnummer" class="text-danger"></span>
+                <label asp-for="Ordre.Kunde.Telefonnummer">Telefonnummer:</label> <br />
+                <input asp-for="Ordre.Kunde.Telefonnummer" class="text-box" /> <br />
+                <span asp-validation-for="Ordre.Kunde.Telefonnummer" class="text-danger"></span>
              
             </div>
             <div class="form-group">
 
-                <label asp-for="@Model.Kunde.Alder">Alder:</label> <br />
-                <input asp-for="@Model.Kunde.Alder" class="text-box" /> <br />
-                <span asp-validation-for="@Model.Kunde.Alder" class="text-danger"></span>
+                <label asp-for="Ordre.Kunde.Alder">Alder:</label> <br />
+                <input asp-for="Ordre.Kunde.Alder" class="text-box" /> <br />
+                <span asp-validation-for="Ordre.Kunde.Alder" class="text-danger"></span>
             </div>
             
-            @*
-            <div class="form-group">
-                <select name="Pakke" class="text-box">
-                    <option value="Erhverv - Pakke 1">Erhverv - Pakke 1</option>
-                    <option value="Erhverv - Pakke 2">Erhverv - Pakke 2</option>
-                    <option value="Portræt - Pakke 1" selected="selected">Portræt - Pakke 1</option>
-                    <option value="Portræt - Pakke 2">Portræt - Pakke 2</option>
-                    <option value="Event - Pakke 1">Event - Pakke 1</option>
-                    <option value="Event - Pakke 2">Event - Pakke 2</option>
+            
+              @*  <div class="form-group">
+
+                <label asp-for="Ordre.Pakke">Pakke: (fx Portræt - Pakke 1)</label> <br />
+                <input asp-for="Ordre.Pakke" class="text-box" /> <br />
+                <span asp-validation-for="Ordre.Pakke" class="text-danger"></span>
+            </div> *@
+
+           @*  @{ switch Ordre.Pakke
+
+             <div class="form-group">
+                 <label for="Ordre.Pakke">Select Package:</label> <br />
+                <select asp-for="Ordre.Pakke" class="text-box">
+                        <option value="PickPrice(1)">Erhverv - Pakke 1</option>
+                        <option value="PickPrice(2)">Erhverv - Pakke 2</option>
+                        <option value="PickPrice(3)" selected="selected">Portræt - Pakke 1</option>
+                        <option value="PickPrice(4)">Portræt - Pakke 2</option>
+                        <option value="PickPrice(5)">Event - Pakke 1</option>
+                        <option value="PickPrice(6)">Event - Pakke 2</option>
                 </select>
-            </div>
-            *@
-            
+            </div> 
+                } *@
+
 
             <div class="form-group">
                
                     <input type="radio" id="Erhverv" name="Erhverv_Eller_Privat" value="Erhverv">
-                    <label for="Erhverv">Erhverv</label> <br />
+                    <label asp-for="Ordre.Kunde.Erhverv">Erhverv</label> <br />
                     <input type="radio" id="Privat" name="Erhverv_Eller_Privat" value="Privat">
-                    <label for="Privat">Privat</label><br>
+                    <label asp-for="Ordre.Kunde.Privat">Privat</label><br>
                         
-                    
                 </div>
             <div class="form-group">
-                <label asp-for="@Model.Ordre.Beskrivelse"> Hvad du henvender dig med:</label> <br />
-                <textarea asp-for="@Model.Ordre.Beskrivelse"id="Beskrivelse" rows="4" cols="50"> </textarea> <br />
-                <span asp-validation-for="@Model.Ordre.Beskrivelse" class="text-danger"></span>
+                <label asp-for="Ordre.Beskrivelse"> Hvad du henvender dig med:</label> <br />
+                <textarea asp-for="Ordre.Beskrivelse"id="Beskrivelse" rows="4" cols="50"> </textarea> <br />
+                <span asp-validation-for="Ordre.Beskrivelse" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" id="Send"  onclick="alert('Tak for din interesse.')" value="Create" class="btn btn-primary" />
+                <input type="submit" id="Send"  onclick="alert('Tak for din interesse.')" value="Send" class="btn btn-primary" />
             </div>
             
         </form>

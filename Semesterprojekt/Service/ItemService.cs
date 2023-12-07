@@ -7,7 +7,7 @@ namespace Semesterprojekt.Service
 {
 	public class ItemService : IItemService
 	{
-		private List<Ordre> _items;
+		private List<Ordre> _items {  get; set; }
 
 		public ItemService()
 		{
