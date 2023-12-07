@@ -51,7 +51,7 @@
 					Email
 				</th>
 				<th>
-					Addresse
+					Pris
 				</th>
 				<th>
 					Telefon
@@ -79,7 +79,7 @@
 		<tbody>
 			@if (Model.Items != null)
 			{
-				foreach (var item in Model.Items.OrderByDescending(i => i.DateTime))
+				foreach (var item in Model.Items.OrderByDescending(i => i.id))
                 {
 					<tr>
 						<td>
@@ -99,7 +99,7 @@
 						</td>
 
 						<td>
-							@item.Kunde.Adresse
+							@item.Billeder.Pris
 						</td>
 
 						<td>
