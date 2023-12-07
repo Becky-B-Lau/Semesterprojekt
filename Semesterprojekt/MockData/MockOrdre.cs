@@ -15,8 +15,6 @@ namespace Semesterprojekt.MockData
 		{
 			return items;
 		}
-
-
 	
 	}
 }
