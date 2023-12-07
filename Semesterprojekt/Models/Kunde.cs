@@ -1,21 +1,20 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace Semesterprojekt.Models
+﻿namespace Semesterprojekt.Models
 {
 
     public class Kunde : Person
     {
-   
+        public bool Erhverv { get; set; }
+        public bool Privat { get; set; }
         public int Kundeid { get; }
         private static int KundeId = 1;
-        public string Type { get; set; }
         public Kunde() : base()
         {
-            Kundeid = KundeId++;
         }
-        public Kunde(string navn, int alder, int telefonnummer, string adresse, string email, string type) : base(navn, alder, telefonnummer, adresse, email)
+
+        public Kunde(string navn, int alder, int telefonnummer, string adresse, string email, bool erhverv, bool privat) : base(navn, alder, telefonnummer, adresse, email)
         {
-            Type = type;
+            Erhverv = erhverv;
+            Privat = privat; 
             Kundeid = KundeId++;
         }
     }
