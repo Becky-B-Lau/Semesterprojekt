@@ -22,5 +22,33 @@ namespace Semesterprojekt.Service
             Workshops.Add(workshop);
         }
 
+        public IEnumerable<Workshop> NameSearch(string str)
+        {
+            List<Workshop> nameSearch = new List<Workshop>();
+            foreach (Workshop workshop in Workshops)
+            {
+                if (workshop.Navn.ToLower().Contains(str.ToLower()))
+                {
+                    nameSearch.Add(workshop);
+                }
+            }
+
+            return nameSearch;
+        }
+
+        public IEnumerable<Workshop> PriceFilter(int maxPrice, int minPrice = 0)
+        {
+            List<Workshop> filterList = new List<Workshop>();
+            foreach (Workshop workshop in Workshops)
+            {
+                if ((minPrice == 0 && workshop.Pris <= maxPrice) || (maxPrice == 0 && workshop.Pris >= minPrice) || (workshop.Pris >= minPrice && workshop.Pris <= maxPrice))
+                {
+                    filterList.Add(workshop);
+                }
+            }
+
+            return filterList;
+        }
+
     }
 }

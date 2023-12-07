@@ -1,0 +1,42 @@
+﻿@page
+@using Semesterprojekt.Models;
+@model Semesterprojekt.Pages.Workshops.CreateWorkshopModel
+@{
+}
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="@Model.Workshop.WorkshopId" class="control-lable"></label>
+        <input asp-for="@Model.Workshop.WorkshopId" class="form-control" />
+        <span asp-validation-for="Workshop.WorkshopId" class="text-danger"></span>
+
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Workshop.Navn" class="control-lable"></label>
+        <input asp-for="@Model.Workshop.Navn" class="form-control" />
+        <span asp-validation-for="Workshop.Navn" class="text-danger"></span>
+
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Workshop.Pris" class="control-lable"></label>
+        <input asp-for="@Model.Workshop.Pris" class="form-control" />
+        <span asp-validation-for="Workshop.Pris" class="text-danger"></span>
+
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Workshop.Lokation" class="control-lable"></label>
+        <input asp-for="@Model.Workshop.Lokation" class="form-control" />
+        <span asp-validation-for="Workshop.Lokation" class="text-danger"></span>
+
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Workshop.Tid" class="control-lable"></label>
+        <input asp-for="@Model.Workshop.Tid" class="form-control" />
+        <span asp-validation-for="Workshop.Tid" class="text-danger"></span>
+
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Create" Class="btn btn-primary" />
+    </div>
+</form>
