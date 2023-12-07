@@ -5,7 +5,7 @@ namespace Semesterprojekt.Models
 
     public class Kunde : Person
     {
-   
+   //ja
         public int Kundeid { get; }
         private static int KundeId = 1;
         public string Type { get; set; }
