@@ -15,21 +15,25 @@ namespace Semesterprojekt.Models
         [Required(ErrorMessage = "Du skal angive en beskrivelse")]
         public string? Beskrivelse { get; set; }
 		public double Pakke { get; set; }
-		public bool Godkendt { get; set; }
+		public Billeder Billeder { get; set; }
+
+        public bool Godkendt { get; set; }
 
 
 		public Ordre() { id = Id++; }
 
-		public Ordre(DateTime dateTime, Kunde kunde, string beskrivelse)
+		public Ordre(DateTime dateTime, Kunde kunde, string beskrivelse, Billeder billeder)
 		{
 			id = Id++;
 			DateTime = dateTime;
 			Kunde = kunde; //hvordan henter jeg kunde.navn osv?
 			Beskrivelse = beskrivelse;
-			//Pakke = pakke;
-			//Godkendt = godkendt;
-		}
+			Billeder = billeder;
+            //Pakke = pakke;
+            //Godkendt = godkendt;
+        }
 
+	
 		//UpdateOrdre
 
 		//DeleteOrdre
