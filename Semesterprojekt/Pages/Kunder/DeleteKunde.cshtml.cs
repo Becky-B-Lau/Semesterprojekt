@@ -7,34 +7,36 @@ using Semesterprojekt.Service;
 namespace Semesterprojekt.Pages.Kunder
 
 {
-	public class DeleteKunde : PageModel
+	public class DeleteKundeModel : PageModel
 	{
 		private IItemService _itemService;
 
-		public DeleteKunde(IItemService itemService)
+		public DeleteKundeModel(IItemService itemService)
 		{
 			_itemService = itemService;
 		}
 
-		[BindProperty]
-		public Models.Kunde Kunde { get; set; }
+		//	[BindProperty]
+		//	public Models.Kunde Kunde { get; set; }
 
 
-		public IActionResult OnGet(int id)
-		{
-			Kunde = _itemService.Kunde(id);
-			if (Item == null)
-				return RedirectToPage("/NotFound"); //NotFound er ikke defineret endnu
+		//	public IActionResult OnGet(int id)
+		//	{
+		//		Kunde = _itemService.Kunde(id);
+		//		if (Item == null)
+		//			return RedirectToPage("/NotFound"); //NotFound er ikke defineret endnu
 
-			return Page();
-		}
+		//		return Page();
+		//	}
 
-		public IActionResult OnPost()
-		{
-			Models.Item deletedItem = _itemService.DeleteItem(Item.Id);
-			if (deletedItem == null)
-				return RedirectToPage("/NotFound"); //NotFound er ikke defineret endnu
+		//	public IActionResult OnPost()
+		//	{
+		//		Models.Item deletedItem = _itemService.DeleteItem(Item.Id);
+		//		if (deletedItem == null)
+		//			return RedirectToPage("/NotFound"); //NotFound er ikke defineret endnu
 
-			return RedirectToPage("GetAllItems");
-		}
+		//		return RedirectToPage("GetAllItems");
+		//	}
+		//}
 	}
+}

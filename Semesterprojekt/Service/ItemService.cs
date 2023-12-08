@@ -7,7 +7,7 @@ namespace Semesterprojekt.Service
 {
 	public class ItemService : IItemService
 	{
-		private List<Ordre> _items {  get; set; }
+		public List<Ordre> _items { get; set; }
 
 		public ItemService()
 		{
@@ -34,6 +34,49 @@ namespace Semesterprojekt.Service
 			}
 
 			return nameSearch;
+		}
+
+		public Ordre GetItem(int kundeid)
+		{
+			foreach (Ordre ordre in _items)
+			{
+				if (ordre.Kunde.Kundeid == kundeid)
+					return ordre;
+			}
+
+			return null;
+		}
+
+		public void UpdateItem(Ordre item)
+		{
+			if (item != null)
+			{
+				foreach (Ordre i in _items)
+				{
+					if (i.Kunde.Kundeid == item.Kunde.Kundeid)
+					{
+						i.Kunde.Navn = item.Kunde.Navn;
+						i.Kunde.Alder = item.Kunde.Alder;
+						i.Kunde.Telefonnummer = item.Kunde.Telefonnummer;
+						i.Kunde.Email = item.Kunde.Email;
+						i.Kunde.Adresse = item.Kunde.Adresse;
+						i.Kunde.Type = item.Kunde.Type;
+					}
+				}
+			}
+		}
+
+		public Ordre DeleteItem(int? itemId)
+		{
+			foreach (Ordre i in _items)
+			{
+				if (i.Kunde.Kundeid == itemId)
+				{
+					_items.Remove(i);
+					return i;
+				}
+			}
+			return null;
 		}
 	}
 }
