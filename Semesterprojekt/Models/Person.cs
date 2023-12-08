@@ -13,7 +13,6 @@ namespace Semesterprojekt.Models
         public int? Alder { get; set; }
         [Display(Name = "Telefonnummer")]
         [Required(ErrorMessage = "Du skal angive et telefonnummer")]
-        //[Range(typeof(int), "00000001", "89999999", ErrorMessage ="Du skal angive et telfonnummer på 8 tal")] (Virker ikke 100%)
         public int? Telefonnummer { get; set; }
         [Display(Name = "Adresse")]
         [Required(ErrorMessage = "Du skal angive din adresse")]
