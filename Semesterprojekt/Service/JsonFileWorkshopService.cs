@@ -12,7 +12,7 @@ namespace Semesterprojekt.Service
         }
         private string JsonFileName 
         {
-            get { return Path.Combine(WebHostEnvironment.WebRootPath, "Data", "Workshop.Json"); }
+            get { return Path.Combine(WebHostEnvironment.WebRootPath, "WorkshopData", "Workshop.Json"); }
         }
         public void SaveJsonWorkshops(List<Workshop> workshops)
         {

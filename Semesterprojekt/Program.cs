@@ -10,6 +10,8 @@ builder.Services.AddSingleton<ItemService, ItemService>();
 builder.Services.AddSingleton<IItemService, ItemService>();
 builder.Services.AddSingleton<IWorkshopService, WorkshopService>();
 builder.Services.AddSingleton<UserService, UserService>();
+builder.Services.AddTransient<JsonFileWorkshopService>();
+
 
 builder.Services.Configure<CookiePolicyOptions>(options => {
     // This lambda determines whether user consent for non-essential cookies is needed for a given request. options.CheckConsentNeeded = context => true;

@@ -1,0 +1,23 @@
+[
+  {
+    "WorkshopId": 1,
+    "Navn": "Festival",
+    "Pris": 22,
+    "Lokation": "Roskilde",
+    "Tid": "17 December"
+  },
+  {
+    "WorkshopId": 2,
+    "Navn": "Show",
+    "Pris": 45,
+    "Lokation": "Holb\u00E6k",
+    "Tid": "27 Juni"
+  },
+  {
+    "WorkshopId": 3,
+    "Navn": "Festival",
+    "Pris": 63,
+    "Lokation": "Ringsted",
+    "Tid": "31 Februar"
+  }
+]
