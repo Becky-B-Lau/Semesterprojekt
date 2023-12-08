@@ -19,12 +19,14 @@
         font-family: Helvetica, Arial, sans-serif;
     }
 
+
+
     /* required */
     .calendar {
         position: absolute;
         border-radius: 4px;
         overflow: hidden;
-        width: 800px;
+        width: 900px;
         height: 450px;
         left: 50%;
         margin-left: -400px;
@@ -33,6 +35,7 @@
         background-color: #ffffff;
         color: #333333;
     }
+
 
             .calendar h1 span {  /* gør at December bliver i sin side*/
                 display: block;
@@ -58,7 +61,7 @@
         }
 
 
-        .calendar .notes p {
+        .calendar .notes p { /*giver en "border" en streg som deler note og #noten*/
             border-bottom: solid 1px rgba(255,255,255,0.4);
         }
 
@@ -108,7 +111,7 @@
 
             .calendar .weekday li a {
                 width: 55px;
-                text-align: center;
+                text-align: left;
                 margin-bottom: 20px;
                 font-size: 12px;
             }
@@ -122,7 +125,7 @@
                 height: 24px;
                 text-align: center;
                 margin: auto auto;
-                font-size: 12px;
+                font-size: 13px;
                 font-weight: bold;
                 border-radius: 12px;
                 margin-bottom: 10px;
@@ -134,7 +137,7 @@
 
     <div class="col leftCol">
         <div class="content">
-            <h1 class="date">Saterday<span>Decemer 24</span></h1>
+            <h1 class="date">Søndag<span>December 24</span></h1>
             <div class="notes">
                 <p>
                     <input type="text" value="" placeholder="note" />
@@ -154,7 +157,7 @@
                 <li><a href="#" title="Feb" data-value="2">Feb</a></li>
                 <li><a href="#" title="Mar" data-value="3">Mar</a></li>
                 <li><a href="#" title="Apr" data-value="4">Apr</a></li>
-                <li><a href="#" title="May" data-value="5">May</a></li>
+                <li><a href="#" title="Maj" data-value="5">Maj</a></li>
                 <li><a href="#" title="Jun" data-value="6">Jun</a></li>
                 <li><a href="#" title="Jul" data-value="7">Jul</a></li>
                 <li><a href="#" title="Aug" data-value="8">Aug</a></li>
@@ -165,13 +168,13 @@
             </ul>
             <div class="clearfix"></div>
             <ul class="weekday">
-                <li><a href="#" title="Mon" data-value="1">Mon</a></li>
-                <li><a href="#" title="Tue" data-value="2">Tue</a></li>
-                <li><a href="#" title="Wed" data-value="3">Wed</a></li>
-                <li><a href="#" title="Thu" data-value="4">Thu</a></li>
-                <li><a href="#" title="Fri" data-value="5">Fri</a></li>
-                <li><a href="#" title="Say" data-value="6">Sat</a></li>
-                <li><a href="#" title="Sun" data-value="7">Sun</a></li>
+                <li><a href="#" title="Man" data-value="1">Man</a></li>
+                <li><a href="#" title="Tir" data-value="2">Tir</a></li>
+                <li><a href="#" title="Ons" data-value="3">Ons</a></li>
+                <li><a href="#" title="Tor" data-value="4">Tor</a></li>
+                <li><a href="#" title="Fre" data-value="5">Fre</a></li>
+                <li><a href="#" title="Lør" data-value="6">Lør</a></li>
+                <li><a href="#" title="Søn" data-value="7">Søn</a></li>
             </ul>
             <div class="clearfix"></div>
             <ul class="days">
