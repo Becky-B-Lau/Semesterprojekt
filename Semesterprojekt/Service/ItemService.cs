@@ -20,5 +20,20 @@ namespace Semesterprojekt.Service
 		}
 
 		public List<Ordre> GetItems() { return _items; }
+
+
+		public IEnumerable<Ordre> NameSearch(string str)
+		{
+			List<Ordre> nameSearch = new List<Ordre>();
+			foreach (Ordre item in _items)
+			{
+				if (item.id.ToString().Contains(str.ToLower()))
+				{
+					nameSearch.Add(item);
+				}
+			}
+
+			return nameSearch;
+		}
 	}
 }
