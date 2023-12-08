@@ -1,5 +1,5 @@
 ﻿@page
-@model Semesterprojekt.Pages.LogIndModel
+@model Semesterprojekt.Pages.Login.LogIndModel
 @{
 }
 <html>
@@ -301,6 +301,16 @@
         -webkit-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
     }
+
+        .LogInd {
+            background: #d4af7a;
+            display: block;
+            width: 260px;
+            margin: 25px auto 0;
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
     <body>
@@ -309,17 +319,19 @@
     <div class="cont">
         <div class="form sign-in">
             <h2>Velkommen</h2>
-            <label>
-                <span>Email</span>
-                <input type="email" onFocus="this.value=''" />
-            </label>
-            <label>
-                <span>Adgangskode</span>
-                <input type="password" onFocus="this.value=''" />
-            </label>
-            <p class="forgot-pass">Glemt adgangskode?</p>
-            <button type="button" onclick=" window.location.href='/Index' ;" class="submit">Log ind</button>
+            <form method="post">
+                <label asp-for="UserName">
+                    <span>Brugernavn</span>
+                    <input asp-for="UserName" />
+                </label>
+                <label asp-for="Password">
+                    <span>Adgangskode</span>
+                    <input asp-for="Password" />
+                </label>
+                <p class="forgot-pass">Glemt adgangskode?</p>
 
+                <input type="submit" onclick=" window.location.href='/LogInd' ;" id="LogInd" class="LogInd" value="Log Ind"></input>
+            </form>
         </div>
         <div class="sub-cont">
             <div class="img">
@@ -338,20 +350,19 @@
             </div>
             <div class="form sign-up">
                 <h2>Opret en bruger</h2>
-                <label>
-                    <span>Navn</span>
-                    <input type="text" />
-                </label>
-                <label>
-                    <span>Email</span>
-                    <input type="email" />
-                </label>
-                <label>
-                    <span>Adgangskode</span>
-                    <input type="password" />
-                </label>
-                <button type="button" onclick=" window.location.href='/LogInd' ;" class="submit">Opret</button>
+                <form method="post">
+                    <label asp-for="UserName">
+                        <span>Brugernavn</span>
+                        <input asp-for="UserName" />
+                    </label>
+                    <label asp-for="Password">
+                        <span>Adgangskode</span>
+                        <input asp-for="Password" />
+                    </label>
+                    <br />
 
+                    <input type="button" onclick=" window.location.href='/LogInd' ;" id="Opret" class="LogInd" value="Opret"></input>
+                </form>
 
             </div>
         </div>
