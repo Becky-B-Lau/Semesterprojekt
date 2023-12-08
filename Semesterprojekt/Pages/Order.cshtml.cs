@@ -12,6 +12,9 @@ namespace Semesterprojekt.Pages
 		[BindProperty]
 		public Models.Ordre Ordre { get; set; }
 		public Models.Kunde Kunde { get; set; }
+		
+		//
+		[BindProperty] public string SearchString { get; set; }
 
 		private readonly ILogger<OrderModel> _logger;
 		private readonly IItemService _itemService;
@@ -35,6 +38,13 @@ namespace Semesterprojekt.Pages
 			// Handle form submission logic here
 			// You can redirect to another page if needed
 			return RedirectToPage("/Order");
+		}
+
+		//
+		public IActionResult OnPostNameSearch()
+		{
+			Items = _itemService.NameSearch(SearchString).ToList();
+			return Page();
 		}
 	}
 }
