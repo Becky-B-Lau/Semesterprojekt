@@ -21,6 +21,9 @@ namespace Semesterprojekt.Pages.Login
 
         [BindProperty, DataType(DataType.Password)]
         public string Password { get; set; }
+        public string Name { get; set; }
+        public string Email { get; set; }
+
         public LogIndModel(UserService userService)
         {
             _userService = userService;
