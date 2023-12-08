@@ -14,7 +14,7 @@ namespace Semesterprojekt.Models
         [Display(Name = "Pris")]
         [Required(ErrorMessage = "Der skal angives en pris")]
         [Range(typeof(double), minimum: "0", maximum: "100000", ErrorMessage = "Prisen skal være mellem {1} og {2}")]
-        public int Pris { get; set; }
+        public double Pris { get; set; }
         [Display(Name = "Der skal angives en lokation")]
         [Required(ErrorMessage = "Workshopen skal have en lokation"), MaxLength(100)]
         public string Lokation { get; set; }
@@ -26,7 +26,7 @@ namespace Semesterprojekt.Models
         {
         }
 
-        public Workshop(int workshopId, string navn, int pris, string lokation, string tid)
+        public Workshop(int workshopId, string navn, double pris, string lokation, string tid)
         {
             WorkshopId = workshopId;
             Navn = navn;

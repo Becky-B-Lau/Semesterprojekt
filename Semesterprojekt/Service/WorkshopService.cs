@@ -6,6 +6,12 @@ namespace Semesterprojekt.Service
     public class WorkshopService : IWorkshopService
     {
         public List<Workshop> Workshops { get; set; }
+        private JsonFileWorkshopService JsonFileWorkshopService { get; set; }
+        public WorkshopService(JsonFileWorkshopService jsonFileWorkshopService) 
+        {
+            JsonFileWorkshopService = jsonFileWorkshopService;
+            Workshops = MockWorkshop.GetMockWorkshop();
+        }
 
         public WorkshopService()
         {
@@ -20,6 +26,7 @@ namespace Semesterprojekt.Service
         public void AddWorkshop(Workshop workshop)
         {
             Workshops.Add(workshop);
+            JsonFileWorkshopService.SaveJsonWorkshops(Workshops);
         }
 
         public IEnumerable<Workshop> NameSearch(string str)
@@ -48,6 +55,55 @@ namespace Semesterprojekt.Service
             }
 
             return filterList;
+        }
+
+        public void UpdateWorkshop(Workshop workshop)
+        {
+            if (workshop != null)
+            {
+                foreach (Workshop i in Workshops)
+                {
+                    if (i.WorkshopId == workshop.WorkshopId)
+                    {
+                        i.Navn = workshop.Navn;
+                        i.Pris = workshop.Pris;
+                        i.Lokation = workshop.Lokation;
+                        i.Tid = workshop.Tid;
+                    }
+                }
+                JsonFileWorkshopService.SaveJsonWorkshops(Workshops);
+            }
+        }
+        public Workshop GetWorkshop(int id)
+        {
+            foreach (Workshop workshop in Workshops) 
+            {
+                if (workshop.WorkshopId == id) 
+                {
+                    return workshop;
+                }
+            }
+            return null;
+        }
+
+        public Workshop DeleteWorkshop(int workshopId) 
+        {
+            Workshop workshopToBeDeleted= null;
+            foreach (Workshop workshop in Workshops)
+            {
+                if(workshop.WorkshopId == workshopId) 
+                {
+                    workshopToBeDeleted = workshop;
+                    break;
+                }
+                
+            }
+            if(workshopToBeDeleted != null) 
+            {
+                Workshops.Remove(workshopToBeDeleted);
+                JsonFileWorkshopService.SaveJsonWorkshops(Workshops);
+            }
+            return workshopToBeDeleted;
         }
 
     }

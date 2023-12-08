@@ -1,0 +1,12 @@
+﻿@page
+@model Semesterprojekt.Pages.Workshops.DeleteWorkshopModel
+@{
+}
+<h1> Slet bekræftelse </h1>
+<div class="alert alert-danger">
+    <h5>Er du sikker på at du vil slette denne workshop - @Model.Workshop.Navn</h5>
+    <form method="post">
+        <button type="submit" class="btn btn-danger">Ja</button>
+        <a class="btn btn-primary"asp-page="/Workshops/Kalender">Nej</a>
+    </form>
+</div>

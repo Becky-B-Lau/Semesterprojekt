@@ -1,0 +1,23 @@
+[
+  {
+    "Id": 1,
+    "Navn": "Festival",
+    "Pris": 22,
+    "Lokation": "Roskilde",
+    "Tid": "17 December"
+  },
+  {
+    "Id": 2,
+    "Navn": "Festival",
+    "Pris": 28,
+    "Lokation": "Roskilde",
+    "Tid": "12 September"
+  },
+  {
+    "Id": 3,
+    "Navn": "Show",
+    "Pris": 45,
+    "Lokation": "Holbæk",
+    "Tid": "23 Juni"
+  }
+]
