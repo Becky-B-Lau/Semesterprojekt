@@ -1,7 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Semesterprojekt.Models;
-using Semesterprojekt.MockData;
 using Semesterprojekt.Service;
 
 namespace Semesterprojekt.Pages.Kunder
@@ -16,27 +14,26 @@ namespace Semesterprojekt.Pages.Kunder
 			_itemService = itemService;
 		}
 
-		//	[BindProperty]
-		//	public Models.Kunde Kunde { get; set; }
+		[BindProperty] 
+		public Models.Ordre Ordre { get; set; }
 
+		public IActionResult OnGet(int kundeid)
+		{
+			Ordre = _itemService.GetItem(kundeid) ;
+			if (Ordre == null)
+				return RedirectToPage("/NotFound"); //NotFound er ikke defineret endnu
 
-		//	public IActionResult OnGet(int id)
-		//	{
-		//		Kunde = _itemService.Kunde(id);
-		//		if (Item == null)
-		//			return RedirectToPage("/NotFound"); //NotFound er ikke defineret endnu
+			return Page();
+		}
 
-		//		return Page();
-		//	}
+		public IActionResult OnPost(int? kundeid)
+		{
+			Ordre = _itemService.GetItem(kundeid);
+			Models.Ordre deletedItem = _itemService.DeleteItem(Ordre.Kunde.Kundeid);
+			if (deletedItem == null)
+				return RedirectToPage("/NotFound"); //NotFound er ikke defineret endnu
 
-		//	public IActionResult OnPost()
-		//	{
-		//		Models.Item deletedItem = _itemService.DeleteItem(Item.Id);
-		//		if (deletedItem == null)
-		//			return RedirectToPage("/NotFound"); //NotFound er ikke defineret endnu
-
-		//		return RedirectToPage("GetAllItems");
-		//	}
-		//}
+			return RedirectToPage("GetAllKunder");
+		}
 	}
 }

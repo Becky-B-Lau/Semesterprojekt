@@ -63,6 +63,10 @@
 						<td>
 							@item.Kunde.Kundeid
 						</td>
+						<td>
+							<a class="btn btn-primary btn-sm" type="button" title="Edit" asp-page="EditKunde" asp-route-id="Ordre.Kunde.Kundeid">Rediger</a>
+							<a class="btn btn-primary btn-sm" type="button" title="Delete" asp-page="DeleteKunde" asp-route-id="Ordre.Kunde.Kundeid">Slet</a>
+						</td>
 					</tr>
 
 				}

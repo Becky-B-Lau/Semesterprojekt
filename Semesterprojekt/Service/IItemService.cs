@@ -9,8 +9,8 @@ namespace Semesterprojekt.Service
 
 		List<Ordre> GetItems();
 		void AddItem(Ordre item);
-		void UpdateItem(Ordre item);
-		Ordre GetItem(int kundeid);
+		void UpdateItem(int? kundeid);
+		Ordre GetItem(int? kundeid);
 		Ordre DeleteItem(int? itemId);
 	}
 }

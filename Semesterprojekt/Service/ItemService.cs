@@ -36,7 +36,7 @@ namespace Semesterprojekt.Service
 			return nameSearch;
 		}
 
-		public Ordre GetItem(int kundeid)
+		public Ordre GetItem(int? kundeid)
 		{
 			foreach (Ordre ordre in _items)
 			{
@@ -47,20 +47,20 @@ namespace Semesterprojekt.Service
 			return null;
 		}
 
-		public void UpdateItem(Ordre item)
+		public void UpdateItem(int? kundeid)
 		{
-			if (item != null)
+			if (kundeid != null)
 			{
 				foreach (Ordre i in _items)
 				{
-					if (i.Kunde.Kundeid == item.Kunde.Kundeid)
+					if (i.Kunde.Kundeid == i.Kunde.Kundeid)
 					{
-						i.Kunde.Navn = item.Kunde.Navn;
-						i.Kunde.Alder = item.Kunde.Alder;
-						i.Kunde.Telefonnummer = item.Kunde.Telefonnummer;
-						i.Kunde.Email = item.Kunde.Email;
-						i.Kunde.Adresse = item.Kunde.Adresse;
-						i.Kunde.Type = item.Kunde.Type;
+						i.Kunde.Navn = i.Kunde.Navn;
+						i.Kunde.Alder = i.Kunde.Alder;
+						i.Kunde.Telefonnummer = i.Kunde.Telefonnummer;
+						i.Kunde.Email = i.Kunde.Email;
+						i.Kunde.Adresse = i.Kunde.Adresse;
+						i.Kunde.Type = i.Kunde.Type;
 					}
 				}
 			}
@@ -68,15 +68,19 @@ namespace Semesterprojekt.Service
 
 		public Ordre DeleteItem(int? itemId)
 		{
+			Ordre kundeSlettes = null;
 			foreach (Ordre i in _items)
 			{
 				if (i.Kunde.Kundeid == itemId)
 				{
-					_items.Remove(i);
-					return i;
+					kundeSlettes = i;
+					break;
 				}
 			}
-			return null;
+			if (kundeSlettes != null)
+			{ _items.Remove(kundeSlettes);
+			}			
+			return kundeSlettes;
 		}
 	}
 }
