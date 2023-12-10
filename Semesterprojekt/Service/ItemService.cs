@@ -82,5 +82,18 @@ namespace Semesterprojekt.Service
 			}			
 			return kundeSlettes;
 		}
+		public IEnumerable<Ordre> NavnSearch(string navn)
+		{
+			List<Ordre> navnSearch = new List<Ordre>();
+			foreach (Ordre i in _items)
+			{
+				if (i.Kunde.Navn.ToLower().Contains(navn.ToLower()))
+				{
+					navnSearch.Add(i);
+				}
+			}
+
+			return navnSearch;
+		}
 	}
 }
