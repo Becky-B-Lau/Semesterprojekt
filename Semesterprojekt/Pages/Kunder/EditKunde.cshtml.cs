@@ -25,15 +25,15 @@ namespace Semesterprojekt.Pages.Kunder
 				return Page();
 			}
 
-			//public IActionResult OnPost()
-			//{
-			//if (!ModelState.IsValid)
-			//	{
-			//		return Page();
-			//	}
+		public IActionResult OnPost()
+		{
+			if (!ModelState.IsValid)
+			{
+				return Page();
+			}
 
-			//	_itemService.UpdateItem(Ordre.Kunde.Kundeid);
-			//	return RedirectToPage("GetAllItems");
-			//}
+			_itemService.UpdateItem(Ordre.Kunde.Kundeid);
+			return RedirectToPage("GetAllItems");
+		}
 	}
 }
