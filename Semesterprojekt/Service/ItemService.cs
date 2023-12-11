@@ -82,18 +82,18 @@ namespace Semesterprojekt.Service
 			}			
 			return kundeSlettes;
 		}
-		public IEnumerable<Ordre> NavnSearch(string navn)
+		public IEnumerable<Ordre> KundeidSearch(int? kundeid)
 		{
-			List<Ordre> navnSearch = new List<Ordre>();
+			List<Ordre> kundeidSearch = new List<Ordre>();
 			foreach (Ordre i in _items)
 			{
-				if (i.Kunde.Navn.ToLower().Contains(navn.ToLower()))
+				if (i.Kunde.Kundeid.ToString().Contains(kundeid.ToString()))
 				{
-					navnSearch.Add(i);
+					kundeidSearch.Add(i);
 				}
 			}
 
-			return navnSearch;
+			return kundeidSearch;
 		}
 	}
 }
