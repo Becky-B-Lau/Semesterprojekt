@@ -47,20 +47,20 @@ namespace Semesterprojekt.Service
 			return null;
 		}
 
-		public void UpdateItem(int? kundeid)
+		public void UpdateItem(Ordre item)
 		{
-			if (kundeid != null)
+			if (item != null)
 			{
 				foreach (Ordre i in _items)
 				{
-					if (i.Kunde.Kundeid == i.Kunde.Kundeid)
+					if (i.Kunde.Kundeid == item.Kunde.Kundeid)
 					{
-						i.Kunde.Navn = i.Kunde.Navn;
-						i.Kunde.Alder = i.Kunde.Alder;
-						i.Kunde.Telefonnummer = i.Kunde.Telefonnummer;
-						i.Kunde.Email = i.Kunde.Email;
-						i.Kunde.Adresse = i.Kunde.Adresse;
-						i.Kunde.Type = i.Kunde.Type;
+						i.Kunde.Navn = item.Kunde.Navn;
+						i.Kunde.Alder = item.Kunde.Alder;
+						i.Kunde.Telefonnummer = item.Kunde.Telefonnummer;
+						i.Kunde.Email = item.Kunde.Email;
+						i.Kunde.Adresse = item.Kunde.Adresse;
+						i.Kunde.Type = item.Kunde.Type;
 					}
 				}
 			}
