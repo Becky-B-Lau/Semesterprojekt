@@ -34,12 +34,12 @@ namespace Semesterprojekt.Pages.Kunder
 		public IActionResult OnPost()
 			{
 			if (!ModelState.IsValid)
-				{
-					return Page();
-				}
-
-				_itemService.UpdateItem(Ordre);
-				return RedirectToPage("GetAllItems");
+			{
+				return Page();
 			}
+
+			_itemService.UpdateItem(Ordre.Kunde.Kundeid);
+			return RedirectToPage("GetAllItems");
+		}
 	}
 }

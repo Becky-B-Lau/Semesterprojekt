@@ -12,7 +12,7 @@ namespace Semesterprojekt.Pages.Login
     public class LogIndModel : PageModel
     {
         public static User LoggedInUser { get; set; } = null;
-   
+
         private UserService _userService;
 
 
@@ -21,8 +21,7 @@ namespace Semesterprojekt.Pages.Login
 
         [BindProperty, DataType(DataType.Password)]
         public string Password { get; set; }
-        public string Name { get; set; }
-        public string Email { get; set; }
+
 
         public LogIndModel(UserService userService)
         {
@@ -34,10 +33,10 @@ namespace Semesterprojekt.Pages.Login
         public async Task<IActionResult> OnPost()
         {
 
-        List<User> users = _userService.users;
+            List<User> users = _userService.users;
             foreach (User user in users)
             {
-               
+
                 if (UserName == user.UserName && Password == user.Password)
                 {
 
@@ -53,8 +52,8 @@ namespace Semesterprojekt.Pages.Login
 
             }
 
-
             return Page();
         }
     }
 }
+    

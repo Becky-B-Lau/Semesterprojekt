@@ -31,9 +31,13 @@
                        <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-page="/Contact">Kontakt</a>
                         </li>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-page="/KalenderKunde">Kalender</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-page="/Info">Info</a>
-                        </li>
+                        
                        
                             </ul>
                     <ul class="nav navbar-nav navbar-right">  
@@ -47,7 +51,7 @@
                             else
                             {
                                 <li class="nav-item nav-link me-3">
-                                    User: @LogIndModel.LoggedInUser.UserName
+                                    Navn: @LogIndModel.LoggedInUser.Name
                                 </li>
 
                                 <li class="nav-item" style="margin-right: -40px;">
