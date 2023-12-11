@@ -10,6 +10,6 @@ namespace Semesterprojekt.Service
 		void UpdateItem(int? kundeid);
 		Ordre GetItem(int? kundeid);
 		Ordre DeleteItem(int? itemId);
-		IEnumerable<Ordre> NavnSearch(string navn);
+		IEnumerable<Ordre> KundeidSearch(int? kundeid);
 	}
 }

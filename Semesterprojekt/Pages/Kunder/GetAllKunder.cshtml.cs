@@ -23,10 +23,10 @@ namespace Semesterprojekt.Pages.Kunder
 			Items = _itemService.GetItems();
 		}
 
-		[BindProperty] public string NavnSearch { get; set; }
-		public IActionResult OnPostNavnSearch()
+		[BindProperty] public int KundeidSearch { get; set; }
+		public IActionResult OnPostKundeidSearch()
 		{
-			Items = _itemService.NavnSearch(NavnSearch).ToList();
+			Items = _itemService.KundeidSearch(KundeidSearch).ToList();
 			return Page();
 		}
 	}
