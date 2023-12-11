@@ -21,12 +21,22 @@ namespace Semesterprojekt.Pages.Workshops
         }
 
         [BindProperty] public string SearchString { get; set; }
+        [BindProperty]
+        public int MinPrice { get; set; }
+
+        [BindProperty]
+        public int MaxPrice { get; set; }
         public IActionResult OnPostNameSearch()
         {
             Workshops = _workshopService.NameSearch(SearchString).ToList();
             return Page();
         }
 
+        public IActionResult OnPostPriceFilter()
+        {
+            Workshops = _workshopService.PriceFilter(MaxPrice, MinPrice).ToList();
+            return Page();
+        }
 
     }
 }
