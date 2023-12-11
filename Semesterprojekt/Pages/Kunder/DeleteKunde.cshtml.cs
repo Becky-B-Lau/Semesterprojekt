@@ -26,7 +26,7 @@ namespace Semesterprojekt.Pages.Kunder
 			return Page();
 		}
 
-		public IActionResult OnPost(int? kundeid)
+		public IActionResult OnPost(int kundeid)
 		{
 			Ordre = _itemService.GetItem(kundeid);
 			Models.Ordre deletedItem = _itemService.DeleteItem(Ordre.Kunde.Kundeid);

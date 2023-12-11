@@ -36,7 +36,7 @@ namespace Semesterprojekt.Service
 			return nameSearch;
 		}
 
-		public Ordre GetItem(int? kundeid)
+		public Ordre GetItem(int kundeid)
 		{
 			foreach (Ordre ordre in _items)
 			{
@@ -49,7 +49,7 @@ namespace Semesterprojekt.Service
 
 		public void UpdateItem(Ordre item)
 		{
-			if (item != null)
+			if (item!= null)
 			{
 				foreach (Ordre i in _items)
 				{
@@ -95,5 +95,6 @@ namespace Semesterprojekt.Service
 
 			return kundeidSearch;
 		}
+		
 	}
 }
