@@ -10,9 +10,14 @@ namespace Semesterprojekt.Service
 		public List<Ordre> _items { get; set; }
 		public static int Id = 1;
 		public static int KundeId = 1;
-        public ItemService()
+		private JasonFileOrdreService JasonFileOrdreService { get; set; }
+
+		
+		public ItemService(JasonFileOrdreService jasonFileOrdreService)
 		{
-			_items = MockOrdre.GetMockOrdre();
+			JasonFileOrdreService = jasonFileOrdreService;
+			//_items = MockOrdre.GetMockOrdre();
+			_items = JasonFileOrdreService.GetJsonOrdre().ToList();
 		}
 
 		public void AddItem(Ordre item)
@@ -21,7 +26,8 @@ namespace Semesterprojekt.Service
             
             item.Kunde.Kundeid = KundeId++;
             item.id = Id++;
-        }
+			JasonFileOrdreService.SaveJsonOrdre(_items);
+		}
 
 		public List<Ordre> GetItems() { return _items; }
 
@@ -51,26 +57,7 @@ namespace Semesterprojekt.Service
 			return null;
 		}
 
-		public void UpdateOrder(Ordre item)
-		{ 
-			if (item != null)
-			{
-				foreach (Ordre? i in _items)
-				{
-					if (i.id == item.id)
-					{
-						i.Beskrivelse = item.Beskrivelse;
-						i.Billeder.Pris = item.Billeder.Pris;
-						i.DateTime = item.DateTime;
-					}
-
-					
-				}
-
-			}
 		
-		}
-
 		public void UpdateItem(Ordre item)
 		{
 			if (item!= null)
@@ -91,7 +78,9 @@ namespace Semesterprojekt.Service
 
 						
 					}
+
 				}
+				JasonFileOrdreService.SaveJsonOrdre(_items);
 			}
 		}
 
@@ -108,6 +97,7 @@ namespace Semesterprojekt.Service
 			}
 			if (kundeSlettes != null)
 			{ _items.Remove(kundeSlettes);
+				JasonFileOrdreService.SaveJsonOrdre(_items);
 			}			
 			return kundeSlettes;
 		}
