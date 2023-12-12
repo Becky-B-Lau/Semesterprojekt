@@ -7,11 +7,8 @@ namespace Semesterprojekt.Service
 		IEnumerable<Ordre> NameSearch(string str);
 		List<Ordre> GetItems();
 		void AddItem(Ordre item);
-		void UpdateItem(Ordre kundeid);
 
 		void UpdateOrder(Ordre kundeid);
-		public Ordre? GetItem(int kundeid);
-		public Ordre DeleteItem(int? itemId);
 		void UpdateItem(Ordre item);
 		Ordre GetItem(int kundeid);
 		Ordre DeleteItem(int? itemId);

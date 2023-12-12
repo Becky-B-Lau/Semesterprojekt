@@ -71,7 +71,6 @@ namespace Semesterprojekt.Service
 		
 		}
 
-		public void UpdateItem(Ordre kundeid)
 		public void UpdateItem(Ordre item)
 		{
 			if (item!= null)
