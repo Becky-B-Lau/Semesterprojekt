@@ -17,9 +17,9 @@ namespace Semesterprojekt.Pages.Kunder
 			[BindProperty]
 			public Models.Ordre Ordre { get; set; }
 
-			public IActionResult OnGet(int Id)
+			public IActionResult OnGet(int kundeid)
 			{
-				Ordre = _itemService.GetItem(Id);
+				Ordre = _itemService.GetItem(kundeid);
 				if (Ordre == null)
 					return RedirectToPage("/NotFound"); //NotFound er ikke defineret endnu
 
