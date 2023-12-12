@@ -8,8 +8,9 @@ namespace Semesterprojekt.Service
 	public class ItemService : IItemService
 	{
 		public List<Ordre> _items { get; set; }
-
-		public ItemService()
+		public static int Id = 1;
+		public static int KundeId = 1;
+        public ItemService()
 		{
 			_items = MockOrdre.GetMockOrdre();
 		}
@@ -17,7 +18,10 @@ namespace Semesterprojekt.Service
 		public void AddItem(Ordre item)
 		{
 			_items.Add(item);
-		}
+            
+            item.Kunde.Kundeid = KundeId++;
+            item.id = Id++;
+        }
 
 		public List<Ordre> GetItems() { return _items; }
 
@@ -61,6 +65,11 @@ namespace Semesterprojekt.Service
 						i.Kunde.Email = item.Kunde.Email;
 						i.Kunde.Adresse = item.Kunde.Adresse;
 						i.Kunde.Type = item.Kunde.Type;
+						i.Billeder.Pris = item.Billeder.Pris;
+						i.Beskrivelse = item.Beskrivelse;
+						i.DateTime = item.DateTime;
+
+						
 					}
 				}
 			}

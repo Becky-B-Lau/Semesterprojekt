@@ -3,7 +3,12 @@
 @{
 }
 
+
 <form method="post">
+	<div class="form-group">
+		<label asp-for="Ordre.Beskrivelse" class="control-label"></label>
+		<input asp-for="Ordre.Beskrivelse" class="form-control" readonly="@(true)" />
+	</div>
 	<div class="form-group">
 		<label asp-for="Ordre.Kunde.Kundeid" class="control-label"></label>
 		<input asp-for="Ordre.Kunde.Kundeid" class="form-control" readonly="@(true)" />

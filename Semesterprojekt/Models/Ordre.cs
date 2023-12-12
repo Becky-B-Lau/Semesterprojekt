@@ -4,7 +4,7 @@ namespace Semesterprojekt.Models
 {
 	public class Ordre
 	{
-		public int id {get;} 
+		public int id { get; set; } 
 		private static int Id = 1;
 
         [Display(Name = "Dato")]
@@ -20,7 +20,7 @@ namespace Semesterprojekt.Models
         public bool Godkendt { get; set; }
 
 
-		public Ordre() { id = Id++; }
+		public Ordre() {  }
 
 		public Ordre(DateTime dateTime, Kunde kunde, string beskrivelse, Billeder billeder)
 		{

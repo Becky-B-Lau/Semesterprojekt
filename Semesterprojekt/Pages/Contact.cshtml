@@ -42,11 +42,23 @@
 
     <h1> <center> @ViewData["Title"]</center></h1>
    <hr />
+
+@*   Alle er bare div class for alle ting i dette Razor Page. div class er kun form gruppen.
+Form method="post" bruger vi fordi vi gerne vil havde en form for at kunde kan indsætte hvad de gerne vil havde. 
+method="post" kan indeholde mere data end method="get" og så hvis man bruger get metoden vil vi får alt indenfor URL 
+og det undgå vi med post metoden.
+*@
     
    <div class="Alle"
     <div class="form">
         <form method="post">
             
+           @* Alle label, input og span har vi satte indenunder div class="form-group"
+            Vi bruger label for at give property en label tekst. fx Ordre.DateTime er label: Dato:
+            input står for det vi gerne vil havde at kunde indsætter. (class="text-box" er noget jeg har brugt i css)
+            span er kraven for Dato og den bliver skrevet med rødt (pga. class="text-danger")
+            asp bruger vi for at den tager fra klassen ordre.
+           *@
             <div class="form-group">
 
                 <label asp-for="Ordre.DateTime">Dato:</label> <br />
@@ -55,6 +67,11 @@
 
             </div>
             <div class="form-group">
+               @*  Select skal være for kunde type hvilket de har 2 valgmuligheder på hjemmeside
+                Så bliver det sendt til kundeoversigt hvad der er blevet valgt. Og her vil den første altid være valgt
+                hvorimode havde vi brugt selected="selected" havde den mulighed blevet valgt (kan ses lidt ned)
+                <option value="(Privat) Hvad der bliver set til os">Privat (Hvad kunde ser på form på hjemmesiden) </option>
+               *@
 
                  <label asp-for="Ordre.Kunde.Type"> Type:</label> <br />
                     <select asp-for="Ordre.Kunde.Type" class="text-box">
@@ -102,6 +119,7 @@
 
             <div class="form-group">
 
+                    @* Her kan vi se at mulighed 3 er valgt som defult ved hjælp af selected="selected" *@
             <label asp-for="Ordre.Billeder.Pris"> Pakke: </label> <br />
             <select asp-for="Ordre.Billeder.Pris" class="text-box">
                         <option value="4000">Erhverv - Pakke 1 </option>
@@ -118,21 +136,36 @@
         
             <div class="form-group">
 
+                @* Textarea er vi gerne vil havde større området felt for nogle at skrive i
+                (i dette tilfæld skal det være rows="4" og cols="50" 
+                br er kunne linje sktift.*@
+
                 <label asp-for="Ordre.Beskrivelse"> Hvad du henvender dig med:</label> <br />
                 <textarea asp-for="Ordre.Beskrivelse"id="Beskrivelse" rows="4" cols="50"> </textarea> <br />
                 <span asp-validation-for="Ordre.Beskrivelse" class="text-danger"></span>
 
             </div>
             <div class="form-group">
-
+                @* input hvor type er submit 
+                id gør ikke noget det er mere til css (hvis jeg skulle brug det)
+                value er hvad knappen hedder (i dette tilfælde: Opret Ordre)
+                class="btn btn-primary" er at vi gerne vil havde en knap af typen primary.
+                *@ 
                 <input type="submit" id="Send"  onclick="alert('Tak for din interesse.')" value="Opret Ordre" class="btn btn-primary" />
 
             </div>
             
         </form>
     </div>
-   
+  @*  Jeg har set map og kontakt oplysninger sammen indenunder en div class og så har jeg en div class være for sig. på dem måde er det nemmere at arbejder med i css *@
     <div class="Kontakt">
+            @* Er lavet vedhjælp af google maps og så bruger vi iframe til google map og src til at finde den. 
+                width and height er højde og bredde og hvor stort vi gerne 
+                vil havde det. style="border:0;" gør at vi ikke har et outline omkring map på siden 
+                (ved at den er sat til 0). allowfullscreen="": gør at kunde kan fullscreen map så den ikke kun er så lille. 
+                 loading="lazy" gør at den kun loader når man har brug for den. det betyder at den kun load når den er synligt for bruger.
+                 referrerpolicy="no-referrer-when-downgrade": styrer henvisningsoplysningerne.
+                 hvilket betyder, at henvisning ikke sendes ved en nedgradering (f.eks. fra HTTPS til HTTP).*@
 <div class="Map">
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2275.3724687226036!2d11.768782!3d55.229217399999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4652be88d0e7faf3%3A0xc06bc6d747cff2a4!2sFarimagsvej%2045%2C%204700%20N%C3%A6stved!5e0!3m2!1sda!2sdk!4v1701346550916!5m2!1sda!2sdk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </div>
