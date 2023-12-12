@@ -1,0 +1,74 @@
+﻿@page "{id:int}"
+@model Semesterprojekt.Pages.EditOrderModel
+@{
+}
+
+<form method="post">
+
+   <!-- Read only -->
+    <div class="form-group">
+        <label asp-for="Item.id" class="control-lable"></label>
+        <input asp-for="Item.id" class="form-control" readonly="@(true)" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Item.Kunde.Kundeid" class="control-lable"></label>
+        <input asp-for="Item.Kunde.Kundeid" class="form-control" readonly="@(true)" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Item.Kunde.Navn" class="control-lable"></label>
+        <input asp-for="Item.Kunde.Navn" class="form-control" readonly="@(true)" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Item.Kunde.Alder" class="control-lable"></label>
+        <input asp-for="Item.Kunde.Alder" class="form-control" readonly="@(true)" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Item.Kunde.Telefonnummer" class="control-lable"></label>
+        <input asp-for="Item.Kunde.Telefonnummer" class="form-control" readonly="@(true)" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Item.Kunde.Adresse" class="control-lable"></label>
+        <input asp-for="Item.Kunde.Adresse" class="form-control" readonly="@(true)" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Item.Kunde.Email" class="control-lable"></label>
+        <input asp-for="Item.Kunde.Email" class="form-control" readonly="@(true)" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Item.Kunde.Type" class="control-lable"></label>
+        <input asp-for="Item.Kunde.Type" class="form-control" readonly="@(true)" />
+    </div>
+
+    <!-- Kan redigeres -->
+    <div class="form-group">
+        <label asp-for="Item.DateTime" class="control-lable"></label>
+        <input asp-for="Item.DateTime" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Item.Beskrivelse" class="control-lable"></label>
+        <input asp-for="Item.Beskrivelse" class="form-control" />
+        <span asp-validation-for="Item.Beskrivelse" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Item.Billeder.Pris" class="control-lable"></label>
+        <input asp-for="Item.Billeder.Pris" class="form-control" />
+        <span asp-validation-for="Item.Billeder.Pris" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Update" class="btn btn-primary" />
+    </div>
+</form>
+
+<div>
+    <a asp-page="/Order">Tilbage til Ordre Oversigt</a>
+</div>
