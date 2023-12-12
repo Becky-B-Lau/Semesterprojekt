@@ -38,7 +38,7 @@ namespace Semesterprojekt.Pages.Kunder
 				return Page();
 			}
 			
-			_itemService.UpdateItem(Ordre.Kunde.Kundeid);
+			_itemService.UpdateItem(Ordre);
 			return RedirectToPage("GetAllItems");
 		}
 	}
