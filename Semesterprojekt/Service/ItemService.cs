@@ -8,6 +8,9 @@ namespace Semesterprojekt.Service
 	public class ItemService : IItemService
 	{
 		public List<Ordre> _items { get; set; }
+		public static int Id { get; set; } //
+		public static int nextId = 2; //
+
 
 		public ItemService()
 		{
@@ -17,6 +20,8 @@ namespace Semesterprojekt.Service
 		public void AddItem(Ordre item)
 		{
 			_items.Add(item);
+
+			item.id = nextId++; //
 		}
 
 		public List<Ordre> GetItems() { return _items; }
@@ -36,31 +41,51 @@ namespace Semesterprojekt.Service
 			return nameSearch;
 		}
 
-		public Ordre GetItem(int? kundeid)
+		public Ordre? GetItem(int kundeid)
 		{
 			foreach (Ordre ordre in _items)
 			{
-				if (ordre.Kunde.Kundeid == kundeid)
+				if (ordre.id == kundeid)
 					return ordre;
 			}
 
 			return null;
 		}
 
-		public void UpdateItem(int? kundeid)
+		public void UpdateOrder(Ordre item)
+		{ 
+			if (item != null)
+			{
+				foreach (Ordre? i in _items)
+				{
+					if (i.id == item.id)
+					{
+						i.Beskrivelse = item.Beskrivelse;
+						i.Billeder.Pris = item.Billeder.Pris;
+						i.DateTime = item.DateTime;
+					}
+
+					
+				}
+
+			}
+		
+		}
+
+		public void UpdateItem(Ordre kundeid)
 		{
 			if (kundeid != null)
 			{
 				foreach (Ordre i in _items)
 				{
-					if (i.Kunde.Kundeid == i.Kunde.Kundeid)
+					if (i.Kunde.Kundeid == kundeid.Kunde.Kundeid)
 					{
-						i.Kunde.Navn = i.Kunde.Navn;
-						i.Kunde.Alder = i.Kunde.Alder;
-						i.Kunde.Telefonnummer = i.Kunde.Telefonnummer;
-						i.Kunde.Email = i.Kunde.Email;
-						i.Kunde.Adresse = i.Kunde.Adresse;
-						i.Kunde.Type = i.Kunde.Type;
+						i.Kunde.Navn = kundeid.Kunde.Navn;
+						i.Kunde.Alder = kundeid.Kunde.Alder;
+						i.Kunde.Telefonnummer = kundeid.Kunde.Telefonnummer;
+						i.Kunde.Email = kundeid.Kunde.Email;
+						i.Kunde.Adresse = kundeid.Kunde.Adresse;
+						i.Kunde.Type = kundeid.Kunde.Type;
 					}
 				}
 			}
