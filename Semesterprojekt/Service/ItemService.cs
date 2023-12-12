@@ -88,8 +88,6 @@ namespace Semesterprojekt.Service
 						i.Billeder.Pris = item.Billeder.Pris;
 						i.Beskrivelse = item.Beskrivelse;
 						i.DateTime = item.DateTime;
-
-						
 					}
 				}
 			}
