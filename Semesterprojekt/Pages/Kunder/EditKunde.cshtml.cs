@@ -32,6 +32,7 @@ namespace Semesterprojekt.Pages.Kunder
 		}
 
 		public IActionResult OnPost()
+
 			{
             if (!ModelState.IsValid)
 			{
@@ -39,6 +40,6 @@ namespace Semesterprojekt.Pages.Kunder
 			}
 			_itemService.UpdateItem(Ordre);
 			return RedirectToPage("GetAllKunder");
-		}
+
 	}
 }
