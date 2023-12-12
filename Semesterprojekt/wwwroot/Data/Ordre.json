@@ -11,26 +11,7 @@
       "Adresse": "Toftebakkevej 9b, 2500 Valby",
       "Email": "cla@mail.dk"
     },
-    "Beskrivelse": "Jeg vil have portr\u00E6t",
-    "Pakke": 0,
-    "Billeder": {
-      "Pris": 4000
-    },
-    "Godkendt": false
-  },
-  {
-    "id": 1,
-    "DateTime": "2015-12-25T10:23:23",
-    "Kunde": {
-      "Type": "Erhverv",
-      "Kundeid": 1,
-      "Navn": "Bo Jacobsen",
-      "Alder": 29,
-      "Telefonnummer": 13877987,
-      "Adresse": "Toftebakkevej 9b, 2500 Valby",
-      "Email": "cla@mail.dk"
-    },
-    "Beskrivelse": "Jeg vil have portr\u00E6t",
+    "Beskrivelse": "Jeg vil have portr\u00E6t 2",
     "Pakke": 0,
     "Billeder": {
       "Pris": 4000
