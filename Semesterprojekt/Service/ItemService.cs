@@ -40,15 +40,35 @@ namespace Semesterprojekt.Service
 			return nameSearch;
 		}
 
-		public Ordre GetItem(int kundeid)
+		public Ordre? GetItem(int kundeid)
 		{
 			foreach (Ordre ordre in _items)
 			{
-				if (ordre.Kunde.Kundeid == kundeid)
+				if (ordre.id == kundeid)
 					return ordre;
 			}
 
 			return null;
+		}
+
+		public void UpdateOrder(Ordre item)
+		{ 
+			if (item != null)
+			{
+				foreach (Ordre? i in _items)
+				{
+					if (i.id == item.id)
+					{
+						i.Beskrivelse = item.Beskrivelse;
+						i.Billeder.Pris = item.Billeder.Pris;
+						i.DateTime = item.DateTime;
+					}
+
+					
+				}
+
+			}
+		
 		}
 
 		public void UpdateItem(Ordre item)
