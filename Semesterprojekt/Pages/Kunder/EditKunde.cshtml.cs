@@ -40,6 +40,6 @@ namespace Semesterprojekt.Pages.Kunder
 			}
 			_itemService.UpdateItem(Ordre);
 			return RedirectToPage("GetAllKunder");
-
+			}
 	}
 }
