@@ -34,7 +34,7 @@ namespace Semesterprojekt.Pages
                 return Page();
             }
 
-            _itemService.UpdateOrder(Item);
+            _itemService.UpdateItem(Item);
             return RedirectToPage("Order");
         
         }
