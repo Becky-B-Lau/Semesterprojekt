@@ -2,13 +2,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Semesterprojekt.Service;
 
-namespace Semesterprojekt.Pages.Workshops
+namespace Semesterprojekt.Pages
 {
-    public class KalenderModel : PageModel
+    public class KalenderKundeModel : PageModel
     {
         private IWorkshopService _workshopService;
 
-        public KalenderModel(IWorkshopService workshopService) //Dependency Injection
+        public KalenderKundeModel(IWorkshopService workshopService) //Dependency Injection
         {
             _workshopService = workshopService;
         }
@@ -37,6 +37,5 @@ namespace Semesterprojekt.Pages.Workshops
             Workshops = _workshopService.PriceFilter(MaxPrice, MinPrice).ToList();
             return Page();
         }
-
     }
 }

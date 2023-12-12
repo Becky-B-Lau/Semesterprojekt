@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Semesterprojekt.Models;
 using Semesterprojekt.Service;
 
 namespace Semesterprojekt.Pages.Kunder
@@ -25,15 +26,20 @@ namespace Semesterprojekt.Pages.Kunder
 				return Page();
 			}
 
-			public IActionResult OnPost()
-			{
-			if (!ModelState.IsValid)
-				{
-					return Page();
-				}
+		public int GetKundeid()
+		{
+			return Ordre.Kunde.Kundeid;
+		}
 
-				_itemService.UpdateItem(Ordre.Kunde.Kundeid);
-				return RedirectToPage("GetAllItems");
+		public IActionResult OnPost()
+
+			{
+            if (!ModelState.IsValid)
+			{
+				return Page();
+			}
+			_itemService.UpdateItem(Ordre);
+			return RedirectToPage("GetAllKunder");
 			}
 	}
 }

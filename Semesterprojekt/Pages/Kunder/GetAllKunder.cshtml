@@ -1,8 +1,9 @@
 ﻿@page
-@model Semesterprojekt.Pages.Kunder.GetAllKunderModel
-@{
+@using Semesterprojekt.Models;
+@model GetAllKunderModel
+@{ 
 }
-
+<center><h1>Kunder</h1></center>
 <body>
 	<table class="table table-bordered table-hover table-striped">
 		<thead>
@@ -28,9 +29,16 @@
 				<th>
 					Kunde Id
 				</th>
+				<th>
+					Redigér/Slet
+				</th>
 
 			</tr>
 		</thead>
+		<form method="post" class="form-inline"> 
+			<input asp-for="KundeidSearch" class="form-control mr-1" placeholder="Søg på kunde" style="margin-left:77px; width:100px;"/>
+			<input type="submit" asp-page-handler="KundeidSearch" value="Søg" class="btn btn-primary" style="margin-top:-68px" />
+		</form>
 
 		<tbody>
 			@if (Model.Items != null)
@@ -64,8 +72,9 @@
 							@item.Kunde.Kundeid
 						</td>
 						<td>
-							<a class="btn btn-primary btn-sm" type="button" title="Edit" asp-page="EditKunde" asp-route-id="Ordre.Kunde.Kundeid">Rediger</a>
-							<a class="btn btn-primary btn-sm" type="button" title="Delete" asp-page="DeleteKunde" asp-route-id="Ordre.Kunde.Kundeid">Slet</a>
+							<a class="btn btn-primary btn-sm" type="button" title="Edit"  style="margin-top: -10px;" asp-page="EditKunde" asp-route-Kundeid="@item.Kunde.Kundeid">Redigér</a>
+							<br>
+							<a class="btn btn-primary btn-sm" type="button" title="Delete" style="margin-bottom: -10px; width:82px;" asp-page="DeleteKunde" asp-route-Kundeid="@item.Kunde.Kundeid">Slet</a>
 						</td>
 					</tr>
 

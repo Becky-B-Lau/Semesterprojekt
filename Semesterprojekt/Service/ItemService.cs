@@ -8,11 +8,9 @@ namespace Semesterprojekt.Service
 	public class ItemService : IItemService
 	{
 		public List<Ordre> _items { get; set; }
-		public static int Id { get; set; } //
-		public static int nextId = 2; //
-
-
-		public ItemService()
+		public static int Id = 1;
+		public static int KundeId = 1;
+        public ItemService()
 		{
 			_items = MockOrdre.GetMockOrdre();
 		}
@@ -20,9 +18,10 @@ namespace Semesterprojekt.Service
 		public void AddItem(Ordre item)
 		{
 			_items.Add(item);
-
-			item.id = nextId++; //
-		}
+            
+            item.Kunde.Kundeid = KundeId++;
+            item.id = Id++;
+        }
 
 		public List<Ordre> GetItems() { return _items; }
 
@@ -73,19 +72,25 @@ namespace Semesterprojekt.Service
 		}
 
 		public void UpdateItem(Ordre kundeid)
+		public void UpdateItem(Ordre item)
 		{
-			if (kundeid != null)
+			if (item!= null)
 			{
 				foreach (Ordre i in _items)
 				{
-					if (i.Kunde.Kundeid == kundeid.Kunde.Kundeid)
+					if (i.Kunde.Kundeid == item.Kunde.Kundeid)
 					{
-						i.Kunde.Navn = kundeid.Kunde.Navn;
-						i.Kunde.Alder = kundeid.Kunde.Alder;
-						i.Kunde.Telefonnummer = kundeid.Kunde.Telefonnummer;
-						i.Kunde.Email = kundeid.Kunde.Email;
-						i.Kunde.Adresse = kundeid.Kunde.Adresse;
-						i.Kunde.Type = kundeid.Kunde.Type;
+						i.Kunde.Navn = item.Kunde.Navn;
+						i.Kunde.Alder = item.Kunde.Alder;
+						i.Kunde.Telefonnummer = item.Kunde.Telefonnummer;
+						i.Kunde.Email = item.Kunde.Email;
+						i.Kunde.Adresse = item.Kunde.Adresse;
+						i.Kunde.Type = item.Kunde.Type;
+						i.Billeder.Pris = item.Billeder.Pris;
+						i.Beskrivelse = item.Beskrivelse;
+						i.DateTime = item.DateTime;
+
+						
 					}
 				}
 			}
@@ -107,5 +112,19 @@ namespace Semesterprojekt.Service
 			}			
 			return kundeSlettes;
 		}
+		public IEnumerable<Ordre> KundeidSearch(int? kundeid)
+		{
+			List<Ordre> kundeidSearch = new List<Ordre>();
+			foreach (Ordre i in _items)
+			{
+				if (i.Kunde.Kundeid.ToString().Contains(kundeid.ToString()))
+				{
+					kundeidSearch.Add(i);
+				}
+			}
+
+			return kundeidSearch;
+		}
+		
 	}
 }
