@@ -34,7 +34,7 @@ namespace Semesterprojekt.Pages
             if (!ModelState.IsValid) 
             { return Page(); }
             _itemService.AddItem(Ordre);
-            return RedirectToPage("Order");
+            return RedirectToPage("Index");
         
         }
 
