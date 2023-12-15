@@ -75,7 +75,7 @@
 
 
 
-<div id="mySidenav" class="sidenav">
+<div id="mySidenav" class="sidenav"> @*Laver et kryds i topen der lukker sidebaren, og viser de 6 forskellige sider de kan komme ind på*@
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <a href="/Bryllup">Bryllup</a>
     <a href="/Familie">Familie</a>
@@ -85,11 +85,11 @@
     <a href="/Portræt">Portræt</a>
 </div>
 
-<div id="main">
+<div id="main"> @*Gør så musen ændre sig når musen er over teksten åben som åbner sidebaren*@
     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Åbn</span>
 </div>
 
-<script>
+<script> @*Åbner og lukker sidebaren, og bestemer hvor langt den går ud*@
     function openNav() {
         document.getElementById("mySidenav").style.width = "250px";
         document.getElementById("main").style.marginLeft = "250px";
@@ -104,30 +104,26 @@
 
 <body>
 
-    <div class="container">
-        <div class="spacing"></div>
-        <div class="image-block" style="background:url(http://placekitten.com/1543/1024) no-repeat center center fixed;"></div>
+   <div class="centered"><h1 style="text-align: center;">@ViewData["Title"]</h1></div> @*Teskt i midten*@
 
-        <div class="centered"><h1 style="text-align: center;">@ViewData["Title"]</h1></div>
-    </div>
 
-        <div id="img">
+    <div id="img">  @*En række med 3 kolonner, fotos i kolonne 1 og 3, og foto med teskt under i kolonne 2*@
             <div class="row">
                 <div class="column">
                 <img src="../Images/Portfolio-Images/kite-1666816_1280.jpg" />
                 </div>
                 <div class="column">
                 <img src="../Images/Portfolio-Images/bride-2566244_1280.jpg" style="box-sizing: border-box; width: 400px; height: 250px;" />
-                    <hr />    
-                        <p style="text-align: center;">
+                    <hr />  @*Laver en linje*@
+                        <p style="text-align: center;"> @*Tekst i midten af siden*@
                         Livet går så hurtigt! Bevar de gode stunder og vigtige minder forevigt på smukkeste vis. <br /> <br />
 
                         Jeg nyder at skabe et kunstværk ud af disse øjeblikke, ligegyldigt om det er et bryllup, en koncert eller blot et herligt smil. Jeg nyder at fange de skæve vinkler og skabe noget særpræget og originalt, som ikke kan spottes med det blotte øje. Jeg nyder at sætte mit eget præg på det som jeg ser gennem kameraet.
                         </p>
-                    <hr />
+                    <hr />  @*Laver en linje*@
                 </div>
                 <div class="column">
-                <img src="../Images/Portfolio-Images/action-2178885_1280.jpg" />
+                <img src="../Images/Portfolio-Images/action-2178885_1280.jpg" /> 
                 </div>
             </div>
             </div>
