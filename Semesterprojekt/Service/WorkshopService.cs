@@ -88,7 +88,7 @@ namespace Semesterprojekt.Service
 
         public Workshop DeleteWorkshop(int workshopId) 
         {
-            Workshop workshopToBeDeleted= null; //?
+            Workshop workshopToBeDeleted= null; //??
             foreach (Workshop workshop in Workshops) // for alle workshops i listen Workshop
             {
                 if(workshop.WorkshopId == workshopId) //tjekker om workshoppens id macher det workshop id som man gerne vil slette

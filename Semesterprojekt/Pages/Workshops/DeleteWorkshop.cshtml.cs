@@ -8,8 +8,8 @@ namespace Semesterprojekt.Pages.Workshops
 
     {
         // Constructor modtager en IWorkshopService som parameter
-        private IWorkshopService _workshopService;
-        public DeleteWorkshopModel(IWorkshopService workshopService) //Depndency ijektion
+        private IWorkshopService _workshopService; //instansfild
+        public DeleteWorkshopModel(IWorkshopService workshopService) //Depndency ijektion //constuctor
         {
             _workshopService = workshopService;
         }
@@ -17,7 +17,7 @@ namespace Semesterprojekt.Pages.Workshops
         /// dependency injektion = designmønstre som bruges til at håndtere forskellige afhængiheder mellem klasser
         /// dependensy injektion referer til en teknik hvor objekter for deres afhængiheder udefra istedet som fx fra IWorkshopService i dette tilfælde
         /// </summary>
-        [BindProperty] //binder de eenskaber som vi har defineret inde i Models.workshoper attaced med lindjen uder bindsproperty
+        [BindProperty] //binder de eenskaber som vi har defineret inde i Models.workshoper attaced med lindjen uder bindsproperty //property
         public Models.Workshop Workshop { get; set; }
 
         public IActionResult OnGet(int id)  // OnGet-metoden, der håndterer HTTP GET-anmodningen
@@ -48,8 +48,8 @@ namespace Semesterprojekt.Pages.Workshops
             return RedirectToPage("Kalender"); // Hvis sletningen lykkes, omdirigeres brugeren til Kalender-siden
         }
         /// <summary>
-        /// først angiver vi at det er en OnPost metode hvilket betyder at der skal en forst for action/handling, 
-        /// i dette tilfælde at workshoppen skal slettet som OnPost skal forsøge at gøre via det givende id
+        /// først angiver vi at det er en OnPost metode hvilket betyder at der skal foretages en action/handling, 
+        /// i dette tilfælde at workshoppen skal slettet, som OnPost skal forsøge at gøre via det givende id
         /// Workshop henter den workshop på id'et som skal slettet nede fra GetWorkshop i workshopservice
         /// og der efter sletter den givene workshop og gmmer den som variable for at tjekke at den eksistere som vi tjekker i vores (if)
         /// hvis den slettede workshop ikke findes kommer vi til "notfound" og hvis den bliver slettet succesfully kommer vi tilbage til kaldender
