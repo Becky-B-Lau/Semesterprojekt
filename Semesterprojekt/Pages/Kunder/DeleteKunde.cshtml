@@ -2,11 +2,17 @@
 @model Semesterprojekt.Pages.Kunder.DeleteKundeModel
 @{
 }
+@* h1 = HTML overskrift *@
 <h1>Bekræft sletning</h1>
+@*"alert alert-danger" = En rød alarm-box. *@
 <div class="alert alert-danger">
+	@* h5 = HTML under-overskrifft *@
 	<h5>Er du sikker på du vil slette denne kunde? - @Model.Ordre.Kunde.Navn</h5>
+@* form metoden post, gør at der er plads til knapperne inde i boxen.*@
 	<form method="post">
-		<button type="submit" class="btn btn-danger">Ja</button>
+		@* "Ja knappen bliver rød pga. "btn btn-danger" klassen*@
+			<button type="submit" class="btn btn-danger">Ja</button>
+		@* asp-page betyder at den linker til siden /Kunder/GetAllKunder *@
 		<a class="btn btn-primary" asp-page="/Kunder/GetAllKunder">Nej</a>
 	</form>
 </div>

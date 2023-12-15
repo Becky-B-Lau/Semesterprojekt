@@ -8,16 +8,16 @@
   },
   {
     "WorkshopId": 2,
-    "Navn": "Show",
-    "Pris": 45,
-    "Lokation": "Holb\u00E6k",
-    "Tid": "27 Juni"
+    "Navn": "Festival",
+    "Pris": 28,
+    "Lokation": "Roskilde",
+    "Tid": "12 September"
   },
   {
     "WorkshopId": 3,
-    "Navn": "Festival",
-    "Pris": 63,
-    "Lokation": "Ringsted",
-    "Tid": "31 Februar"
+    "Navn": "Show",
+    "Pris": 45,
+    "Lokation": "Holb\u00E6k",
+    "Tid": "23 Juni"
   }
 ]

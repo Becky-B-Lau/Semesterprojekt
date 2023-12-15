@@ -26,17 +26,13 @@ namespace Semesterprojekt.Models
 		{
 			id = Id++;
 			DateTime = dateTime;
-			Kunde = kunde; //hvordan henter jeg kunde.navn osv?
+			Kunde = kunde;
 			Beskrivelse = beskrivelse;
 			Billeder = billeder;
-            //Pakke = pakke;
-            //Godkendt = godkendt;
+            
         }
 
 	
-		//UpdateOrdre
-
-		//DeleteOrdre
 	}
 
 

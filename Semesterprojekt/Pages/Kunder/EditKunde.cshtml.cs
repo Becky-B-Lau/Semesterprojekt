@@ -5,26 +5,26 @@ using Semesterprojekt.Service;
 
 namespace Semesterprojekt.Pages.Kunder
 {
-	public class EditKundeModel : PageModel
-	{
-		private IItemService _itemService;
+    public class EditKundeModel : PageModel
+    {
+			private IItemService _itemService;
 
-		public EditKundeModel(IItemService itemService)
-		{
-			_itemService = itemService;
-		}
+			public EditKundeModel(IItemService itemService)
+			{
+				_itemService = itemService;
+			}
 
-		[BindProperty]
-		public Models.Ordre Ordre { get; set; }
+			[BindProperty]
+			public Models.Ordre Ordre { get; set; }
 
-		public IActionResult OnGet(int Id)
-		{
-			Ordre = _itemService.GetItem(Id);
-			if (Ordre == null)
-				return RedirectToPage("/NotFound"); //NotFound er ikke defineret endnu
+			public IActionResult OnGet(int kundeid)
+			{
+				Ordre = _itemService.GetItem(kundeid);
+				if (Ordre == null)
+					return RedirectToPage("/NotFound"); //NotFound er ikke defineret endnu
 
-			return Page();
-		}
+				return Page();
+			}
 
 		public int GetKundeid()
 		{
@@ -33,15 +33,13 @@ namespace Semesterprojekt.Pages.Kunder
 
 		public IActionResult OnPost()
 
-		{
-			if (!ModelState.IsValid)
+			{
+            if (!ModelState.IsValid)
 			{
 				return Page();
 			}
 			_itemService.UpdateItem(Ordre);
 			return RedirectToPage("GetAllKunder");
-
-		}
+			}
 	}
 }
-

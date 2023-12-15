@@ -4,36 +4,76 @@
 @{
 	ViewData["Title"] = "Ordreoversigt";
 }
+<style>
+	.sidenav {
+		height: 100%;
+		width: 0;
+		position: fixed;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		background-color: #111;
+		overflow-x: hidden;
+		transition: 0.5s;
+		padding-top: 60px;
+	}
 
-<head>
-	<style>
-		.Alle {
-			position: relative;
+		.sidenav a {
+			padding: 8px 8px 8px 32px;
+			text-decoration: none;
+			font-size: 25px;
+			color: #818181;
+			display: block;
+			transition: 0.3s;
 		}
 
-		.Kontakt {
+			.sidenav a:hover {
+				color: #f1f1f1;
+			}
+
+		.sidenav .closebtn {
 			position: absolute;
-			top: 200px;
-			left: 600px;
+			top: 0;
+			right: 25px;
+			font-size: 36px;
+			margin-left: 50px;
 		}
 
-		.pKontakt {
-			font-size: 18px;
-			text-align: center;
-		}
+	#main {
+		transition: margin-left .5s;
+		padding: 16px;
+	}
+</style>
+
+<div id="mySidenav" class="sidenav">
+	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	<a href="/Workshops/Kalender">Kalender</a>
+	<a href="/Order">Ordrer</a>
+	<a href="/Kunder/GetAllKunder">Kunder</a>
+</div>
+
+<div id="main">
+	<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Åbn</span>
+</div>
 
 
-		.text-box {
-			width: 390px;
-			resize: none;
-			overflow: auto;
-		}
-	</style>
-</head>
+<script>
+	function openNav() {
+		document.getElementById("mySidenav").style.width = "250px";
+		document.getElementById("main").style.marginLeft = "250px";
+	}
+
+	function closeNav() {
+		document.getElementById("mySidenav").style.width = "0";
+		document.getElementById("main").style.marginLeft = "0";
+	}
+</script>
 
 <body>
+	
 	<h1> <center> @ViewData["Title"]</center></h1>
 	<hr />
+	
 
 	@* Searchbar *@
 	<form method="post" class="form-inline">
@@ -91,7 +131,7 @@
                 {
 					<tr>
 						<td>
-							@item.id @*Har ændret Id fra private til public i Ordre.cs *@
+							@item.id 
 						</td> 
 
 						<td>
@@ -119,12 +159,43 @@
 
 						<td>
 							<div class="form-group">
-								<input type="submit" onclick="alert('Du har accepteret Ordren. Bekræftelsesmail er sent til Kunden.')" id="Send" value="Accepter" class="btn btn-primary" style="margin:2px;" />
+								<input type="submit" onclick="handleAcceptClick1()" id="Send1" value="Accepter" class="btn btn-primary" style="margin:2px;" />
 
-								<input type="submit" onclick="alert('Du har afvist Ordren. Bekræftelsesmail er sent til Kunden.')" id="Send" value="Afvis" class="btn btn-primary" style="margin:2px;" />
+								<input type="submit" onclick="handleAcceptClick2()" id="Send2" value="Afvis" class="btn btn-primary" style="margin:2px;" />
+
+								 <a input type="submit" id="Send" class="btn btn-primary" asp-page="EditOrder" asp-route-id="@item.id" style="margin: 1px;">   Rediger   </a>
+
+								 <!-- Det her deaktiverer knappen (Send1) når man klicker på den-->
+								<script>
+									function handleAcceptClick1() {
+										// Perform your desired action
+										alert('Du har accepteret Ordren. Bekræftelsesmail er sendt til Kunden.');
+
+										// Once clicked, disable and rename buttons, change color
+										document.getElementById('Send1').style.backgroundColor = 'green';
+										document.getElementById('Send1').value = 'Accepteret';
+										document.getElementById('Send1').disabled = true;
+										document.getElementById('Send2').disabled = true;						
+									}
+
+									function handleAcceptClick2() {
+										alert('Du har afvist Ordren. Bekræftelsesmail er sendt til Kunden.');
+
+										document.getElementById('Send2').style.backgroundColor = 'red';
+										document.getElementById('Send2').value = 'Afvist';
+										document.getElementById('Send1').disabled = true;
+										document.getElementById('Send2').disabled = true;
+
+									}
+								</script>
+
 							</div>
 
+				
+
 						</td>
+
+						
 					</tr>
 
 				}
