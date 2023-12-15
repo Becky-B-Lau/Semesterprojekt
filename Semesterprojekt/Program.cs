@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddSingleton<ItemService, ItemService>();
 builder.Services.AddSingleton<IItemService, ItemService>();
-builder.Services.AddSingleton<IWorkshopService, WorkshopService>();
+builder.Services.AddSingleton<IWorkshopService, WorkshopService>(); //singleton gør at når flere bruger gør den samme action er der kun et resultat pr. action, så hvis flere sletter den samme workshop bliver workshppen ku slettet en gang
 builder.Services.AddSingleton<UserService, UserService>();
 builder.Services.AddTransient<JsonFileWorkshopService>();
 builder.Services.AddTransient<JasonFileOrdreService>();
