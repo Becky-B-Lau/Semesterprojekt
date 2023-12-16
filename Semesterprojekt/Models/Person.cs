@@ -9,10 +9,10 @@ namespace Semesterprojekt.Models
         [Required(ErrorMessage = "Du skal angive dit navn")]
         public string? Navn { get; set; }
         [Display(Name = "Alder")]
-        [Required(ErrorMessage = "Du skal angive dit alder")]
+        [Required(ErrorMessage = "Du skal angive din alder")]
         public int? Alder { get; set; }
         [Display(Name = "Telefonnummer")]
-        [Required(ErrorMessage = "Du skal angive et telefonnummer")]
+        [Required(ErrorMessage = "Du skal angive dit telefonnummer")]
         public int? Telefonnummer { get; set; }
         [Display(Name = "Adresse")]
         [Required(ErrorMessage = "Du skal angive din adresse")]
