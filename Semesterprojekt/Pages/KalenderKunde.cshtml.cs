@@ -8,7 +8,7 @@ namespace Semesterprojekt.Pages
     {
         private IWorkshopService _workshopService;
 
-        public KalenderKundeModel(IWorkshopService workshopService) //Dependency Injection
+        public KalenderKundeModel(IWorkshopService workshopService)
         {
             _workshopService = workshopService;
         }

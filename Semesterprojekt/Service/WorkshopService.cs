@@ -88,23 +88,34 @@ namespace Semesterprojekt.Service
 
         public Workshop DeleteWorkshop(int workshopId) 
         {
-            Workshop workshopToBeDeleted= null;
-            foreach (Workshop workshop in Workshops)
+            Workshop workshopToBeDeleted= null; //??
+            foreach (Workshop workshop in Workshops) // for alle workshops i listen Workshop
             {
-                if(workshop.WorkshopId == workshopId) 
+                if(workshop.WorkshopId == workshopId) //tjekker om workshoppens id macher det workshop id som man gerne vil slette
                 {
-                    workshopToBeDeleted = workshop;
-                    break;
+                    workshopToBeDeleted = workshop; //hvis der er match, gem workshoppen som skal slettes
+                    break; //stop loopet
                 }
                 
             }
-            if(workshopToBeDeleted != null) 
+            if(workshopToBeDeleted != null) // hvis den valgte workshop er fundet
             {
-                Workshops.Remove(workshopToBeDeleted);
-                JsonFileWorkshopService.SaveJsonWorkshops(Workshops);
+                Workshops.Remove(workshopToBeDeleted); // så fjernes workshoppen fra listen
+                JsonFileWorkshopService.SaveJsonWorkshops(Workshops); //gemmer denne action i en jasonfil
             }
-            return workshopToBeDeleted;
+            return workshopToBeDeleted; // ellers returner den valgte workshop
         }
+        ///<summary>
+        ///vi starter med at angive metoden som er en deleteworkshop basseret på workshopId
+        ///og så siger vi for hver workshop i listen workshop
+        ///tjekker vi om id'et macher vores vaglte workshop,
+        ///hvis det matcher gem den workshop
+        /// -------- så for første loop finder vi workshoppen og trækker den ud-------
+        /// derefter hvis den valgte workshop er fundet 
+        /// slettes den vaglte workshop fra listen inde i workshops
+        /// actionen bliver gemt i jasonfilen så vi ikke længere kan se den valgte workshop længere
+        /// hvis ikke at den valgte workshop kunne slettet retunere den workshoppen igen 
+        ///</summary>
 
     }
 }

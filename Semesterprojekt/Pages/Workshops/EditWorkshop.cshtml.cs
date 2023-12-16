@@ -14,7 +14,7 @@ namespace Semesterprojekt.Pages.Workshops
         [BindProperty]
         public Models.Workshop Workshop { get; set; }
 
-        public IActionResult OnGet(int Id) 
+        public IActionResult OnGet(int Id)                      
         {
             Workshop = _workshopService.GetWorkshop(Id);
             if (Workshop == null)  
