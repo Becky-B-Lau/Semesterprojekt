@@ -2,54 +2,93 @@
 @model Semesterprojekt.Pages.Kunder.EditKundeModel
 @{
 }
-
+@* <form>: Form element. Den er brugt til at collecte inputs fra brugerne.
+method="post": Denne metoder bliver brugt til at sende den date brugeren har tastet ind, til en server.
+post: Når method="post" bliver brugt, fordi brugeren skal udfylde en form, og kan indeholde sensitiv data *@
 <form method="post">
+	@* "form-group" er styling, der gør at elementerne får den rigtige afstand osv. *@
 	<div class="form-group">
+		@* <label asp-for="Ordre.Kunde.Navn" binder label til en models property, som i dette tilfælde er kundens navn.
+		class="control-label"></label> er style *@
 		<label asp-for="Ordre.Kunde.Navn" class="control-label"></label>
+		@* input elemtentet bliver brugt til at skabe en interaktiv kontrol i en web form til at acceptere data fra brugeren. *@
 		<input asp-for="Ordre.Kunde.Navn" class="form-control" />
+		@* Håndterer errors. Klassen text-danger gør, at teksten bliver rød. *@
 		<span asp-validation-for="Ordre.Kunde.Navn" class="text-danger"></span>
 	</div>
 	<div class="form-group">
+		@* <label asp-for="Ordre.Kunde.Navn" binder label til en models property, som i dette tilfælde er kundens alder. *@
 		<label asp-for="Ordre.Kunde.Alder" class="control-label"></label>
+		@* input elemtentet bliver brugt til at skabe en interaktiv kontrol i en web form til at acceptere data fra brugeren. *@
 		<input asp-for="Ordre.Kunde.Alder" class="form-control" />
+		@* Håndterer errors. Klassen text-danger gør, at teksten bliver rød. *@
 		<span asp-validation-for="Ordre.Kunde.Alder" class="text-danger"></span>
 	</div>
     <div class="form-group">
+		@* <label asp-for="Ordre.Kunde.Navn" binder label til en models property, som i dette tilfælde er kundens telefonnummer. *@
 		<label asp-for="Ordre.Kunde.Telefonnummer" class="control-label"></label>
+		@* input elemtentet bliver brugt til at skabe en interaktiv kontrol i en web form til at acceptere data fra brugeren. *@
 		<input asp-for="Ordre.Kunde.Telefonnummer" class="form-control" />
+		@* Håndterer errors. Klassen text-danger gør, at teksten bliver rød. *@
 		<span asp-validation-for="Ordre.Kunde.Telefonnummer" class="text-danger"></span>
-	</div><div class="form-group">
+	</div>
+	<div class="form-group">
+		@* <label asp-for="Ordre.Kunde.Navn" binder label til en models property, som i dette tilfælde er kundens adresse. *@
 		<label asp-for="Ordre.Kunde.Adresse" class="control-label"></label>
+		@* input elemtentet bliver brugt til at skabe en interaktiv kontrol i en web form til at acceptere data fra brugeren. *@
 		<input asp-for="Ordre.Kunde.Adresse" class="form-control" />
+		@* Håndterer errors. Klassen text-danger gør, at teksten bliver rød. *@
 		<span asp-validation-for="Ordre.Kunde.Adresse" class="text-danger"></span>
-	</div><div class="form-group">
+	</div>
+	<div class="form-group">
+		@* <label asp-for="Ordre.Kunde.Navn" binder label til en models property, som i dette tilfælde er kundens email. *@
 		<label asp-for="Ordre.Kunde.Email" class="control-label"></label>
+		@* input elemtentet bliver brugt til at skabe en interaktiv kontrol i en web form til at acceptere data fra brugeren. *@
 		<input asp-for="Ordre.Kunde.Email" class="form-control" />
+		@* Håndterer errors. Klassen text-danger gør, at teksten bliver rød. *@
 		<span asp-validation-for="Ordre.Kunde.Email" class="text-danger"></span>
 	</div>
 	<div class="form-group">
+		@* <label asp-for="Ordre.Kunde.Navn" binder label til en models property, som i dette tilfælde er kundens type. *@
 		<label asp-for="Ordre.Kunde.Type" class="control-label"></label>
+		@* input elemtentet bliver brugt til at skabe en interaktiv kontrol i en web form til at acceptere data fra brugeren. *@
 		<input asp-for="Ordre.Kunde.Type" class="form-control" />
+		@* Håndterer errors. Klassen text-danger gør, at teksten bliver rød. *@
 		<span asp-validation-for="Ordre.Kunde.Email" class="text-danger"></span>
 	</div>
 	<div class="form-group">
+		@* <label asp-for="Ordre.Kunde.Navn" binder label til en models property, som i dette tilfælde er kundens id. *@
 		<label asp-for="Ordre.Kunde.Kundeid" class="control-label"></label>
+		@* input elemtentet bliver brugt til at skabe en interaktiv kontrol i en web form til at acceptere data fra brugeren.
+		Read only betyder, at den ikke kan redigeres.	*@
 		<input asp-for="Ordre.Kunde.Kundeid" class="form-control" readonly="@(true)" />
 	</div>
 	<div class="form-group">
+		@* Hidden betyder at den ikke bliver vist på hjemmesiden og read only betyder, at den ikke kan redigeres. *@
+		@* <label asp-for="Ordre.Kunde.Navn" binder label til en models property, som i dette tilfælde er ordrens beskrivelse. *@
 		<label hidden asp-for="Ordre.Beskrivelse" class="control-label"></label>
+		@* input elemtentet bliver brugt til at skabe en interaktiv kontrol i en web form til at acceptere data fra brugeren. *@
 		<input hidden asp-for="Ordre.Beskrivelse" class="form-control" readonly="@(true)" />
 		</div>
 	<div class="form-group">
+		@* Hidden betyder at den ikke bliver vist på hjemmesiden og read only betyder, at den ikke kan redigeres. *@
+		@* <label asp-for="Ordre.Kunde.Navn" binder label til en models property, som i dette tilfælde er ordrens dato. *@
 		<label hidden asp-for="Ordre.DateTime" class="control-label"></label>
+		@* input elemtentet bliver brugt til at skabe en interaktiv kontrol i en web form til at acceptere data fra brugeren. *@
 		<input hidden asp-for="Ordre.DateTime" class="form-control" readonly="@(true)" />
 	</div>
 	<div class="form-group">
+		@* Hidden betyder at den ikke bliver vist på hjemmesiden og read only betyder, at den ikke kan redigeres. *@
+		@* <label asp-for="Ordre.Kunde.Navn" binder label til en models property, som i dette tilfælde er billedets pris. *@
 		<label hidden asp-for="Ordre.Billeder.Pris" class="control-label"></label>
+		@* input elemtentet bliver brugt til at skabe en interaktiv kontrol i en web form til at acceptere data fra brugeren. *@
 		<input hidden asp-for="Ordre.Billeder.Pris" class="form-control" readonly="@(true)" />
 	</div>
 	<div class="form-group">
+		@* Hidden betyder at den ikke bliver vist på hjemmesiden og read only betyder, at den ikke kan redigeres. *@
+		@* <label asp-for="Ordre.Kunde.Navn" binder label til en models property, som i dette tilfælde er ordrens id. *@
 		<label hidden asp-for="Ordre.id" class="control-label"></label>
+		@* input elemtentet bliver brugt til at skabe en interaktiv kontrol i en web form til at acceptere data fra brugeren. *@
 		<input hidden asp-for="Ordre.id" class="form-control" readonly="@(true)" />
 	</div>
 

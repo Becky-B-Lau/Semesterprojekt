@@ -74,10 +74,14 @@
         </style>
     </head>
 
+@*  <div> betyder sektion.
+    id="mySidenav" giver et id til <div> (bliver kun brugt en gang) som kan blive brugt til CSS
+    class="sidenav" giver en klasse til <div> som kan bruges til css de steder, der har det samme klasse navn. *@
 <div id="mySidenav" class="sidenav">
-    @* "åbn" knappens lukkefunktion? *@
+    @* <a href="javascript:void(0)" laver et hyperlink, som ikke navigerer til en anden side, men gør noget, når man klikker på knappen.
+       onclick="closeNav()">&times; = laver et kryds i sidenaven, som man kan trykke på for at komme ud af den igen *@
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    @* De 3 knapper, man kan gå ind på i side-navbaren *@
+    @* hyperlinks, der fører os ind på en anden del af hjemmesiden. *@
     <a href="/Erhverv">Erhverv</a>
     <a href="/Portræt1">Portræt</a>
     <a href="/Event">Event</a>
@@ -88,6 +92,9 @@
     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Åbn</span>
 </div>
 
+@* Javascript:
+Når openNav() er kaldt ved at klikke på "Åbn", åbner den sidenaven.
+Når closeNav() er kladt ved at klikke på krydset, tager den os tilbage til startpositionen på siden. *@
 <script>
     function openNav() {
         document.getElementById("mySidenav").style.width = "250px";
@@ -103,14 +110,16 @@
     <body>
 
     <div class="img-box">
+        @*Baggrunds foto, der er stationær (det bevæger sig ikke, når man ruler ned på siden) og der er i midten*@
         <div class="spacing"></div>
         <div class="image-block" style="background:url(../Images/Service-Images/Roskilde.jpg) no-repeat center center fixed; opacity: 0.7;"></div>
+        @*Tekst i midten af fotoet*@
         <div class="centered"><h1 style="text-align: center;">@ViewData["Title"]</h1></div>
     </div>
 
     @* "hr" betyder horizontal line *@
 <hr />
-    @* Paragraph text *@
+    @* Paragraph text, som er centreret *@
 <p>
     <center>
             Mine leverancer er altid af højeste kvalitet, og mit mål er at både du som kunde og jeg selv som fotograf, er tilfredse med resultatet før ordren afsluttes.
