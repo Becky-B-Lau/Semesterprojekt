@@ -4,20 +4,20 @@
     "Navn": "Festival",
     "Pris": 22,
     "Lokation": "Roskilde",
-    "Tid": "17 December"
+    "Tid": "17 December, 15:45"
   },
   {
     "WorkshopId": 2,
     "Navn": "Festival",
     "Pris": 28,
     "Lokation": "Roskilde",
-    "Tid": "12 September"
+    "Tid": "12 September, 18:15"
   },
   {
     "WorkshopId": 3,
     "Navn": "Show",
     "Pris": 45,
     "Lokation": "Holb\u00E6k",
-    "Tid": "23 Juni"
+    "Tid": "23 Juni, 17:30"
   }
 ]
