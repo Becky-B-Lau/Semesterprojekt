@@ -10,12 +10,8 @@ namespace Semesterprojekt.Service
         public WorkshopService(JsonFileWorkshopService jsonFileWorkshopService) 
         {
             JsonFileWorkshopService = jsonFileWorkshopService;
-            Workshops = MockWorkshop.GetMockWorkshop();
-        }
-
-        public WorkshopService()
-        {
-            Workshops = MockWorkshop.GetMockWorkshop();
+            //Workshops = MockWorkshop.GetMockWorkshop();
+            Workshops = JsonFileWorkshopService.GetJsonWorkshops().ToList();
         }
 
         public List<Workshop> GetWorkshops()
