@@ -4,8 +4,11 @@
 }
 <form method="post">
     <div class="form-group">
-        <label asp-for="@Model.Workshop.WorkshopId" class="control-lable"></label>
+        @* Fortæller hvilkket label den skal have her finder den id'et til workshopen. *@
+        <label asp-for="@Model.Workshop.WorkshopId" class="control-lable"></label> 
+        @* Gør så at der er et felt med, i dette tilfælde, id'et *@
         <input asp-for="@Model.Workshop.WorkshopId" class="form-control" />
+        @* Sikkre sig at tjekke efter vis der sker en error, og class="text-danger" går at teksten bliver rød under felterne *@
         <span asp-validation-for="Workshop.WorkshopId" class="text-danger"></span>
 
     </div>
@@ -33,11 +36,12 @@
         <span asp-validation-for="Workshop.Tid" class="text-danger"></span>
 
     </div>
-
+    @* Laver en kanp der indsender data'en tilbage til programet *@
     <div class="form-group">
         <input type="submit" value="Update" Class="btn btn-primary" />
     </div>
 </form>
+@* Lavet et link under knappen der sender dig tilbage til kalenderen *@
 <div>
     <a asp-page="/Workshop/Kalender">Tilbage til Kalenderen</a>
 </div>

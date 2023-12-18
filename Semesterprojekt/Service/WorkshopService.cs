@@ -55,19 +55,19 @@ namespace Semesterprojekt.Service
 
         public void UpdateWorkshop(Workshop workshop)
         {
-            if (workshop != null)
+            if (workshop != null) //Sikkre sig at workshop ikke er null, ellers stopper den
             {
-                foreach (Workshop i in Workshops)
+                foreach (Workshop i in Workshops) //Kigger helle listen af Workshops igennem 
                 {
-                    if (i.WorkshopId == workshop.WorkshopId)
+                    if (i.WorkshopId == workshop.WorkshopId) //Tjekker at id'et på det vi gerne ville opdatere, har et id der matcher et der er i listen af workshops
                     {
-                        i.Navn = workshop.Navn;
+                        i.Navn = workshop.Navn; //Ændre det nuværende navn med det nye navn 
                         i.Pris = workshop.Pris;
                         i.Lokation = workshop.Lokation;
                         i.Tid = workshop.Tid;
                     }
                 }
-                JsonFileWorkshopService.SaveJsonWorkshops(Workshops);
+                JsonFileWorkshopService.SaveJsonWorkshops(Workshops); //Går ind i Json filens metoder og gemmer
             }
         }
         public Workshop GetWorkshop(int id)

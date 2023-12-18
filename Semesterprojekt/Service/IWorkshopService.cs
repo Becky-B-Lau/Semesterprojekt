@@ -9,7 +9,7 @@ namespace Semesterprojekt.Service
     {
 
         List<Workshop> GetWorkshops();
-        public void UpdateWorkshop(Workshop workshop);
+        public void UpdateWorkshop(Workshop workshop); // Opdatere en Workshop med den nye workshop
         public Workshop GetWorkshop(int id);
         public Workshop DeleteWorkshop(int id); // Sletter en Workshop baseret på det givne id og returnerer den slettede Workshop
         void AddWorkshop(Workshop workshop);
