@@ -1,21 +1,36 @@
 [
   {
     "id": 1,
-    "DateTime": "2015-12-25T10:23:23",
+    "DateTime": "2023-12-14T16:57:00",
+    "Kunde": {
+      "Type": "Privat",
+      "Kundeid": 1,
+      "Navn": "Maria-Clara",
+      "Alder": 23,
+      "Telefonnummer": 91723325,
+      "Adresse": "Enghavevej 142",
+      "Email": "mariaclara.neu@gmail.com"
+    },
+    "Beskrivelse": "hallo",
+    "Billeder": {
+      "Pris": 2500
+    }
+  },
+  {
+    "id": 2,
+    "DateTime": "2023-12-20T00:27:00",
     "Kunde": {
       "Type": "Erhverv",
-      "Kundeid": 1,
-      "Navn": "Bo Jacobsen",
-      "Alder": 29,
-      "Telefonnummer": 13877987,
-      "Adresse": "Toftebakkevej 9b, 2500 Valby",
-      "Email": "cla@mail.dk"
+      "Kundeid": 2,
+      "Navn": "AmalieLindberg Naildesign ApS",
+      "Alder": 22,
+      "Telefonnummer": 98765434,
+      "Adresse": "Amalienborg Slot, 1156 K\u00F8benhavn K",
+      "Email": "amalie@mail.com"
     },
-    "Beskrivelse": "Jeg vil have portr\u00E6t",
-    "Pakke": 0,
+    "Beskrivelse": "Jeg vil gerne udvikle en Branding Strategi til min Negle Design Virksomhed for at styrke min pr\u00E6sens p\u00E5 markedet. ",
     "Billeder": {
-      "Pris": 4000
-    },
-    "Godkendt": false
+      "Pris": 7500
+    }
   }
 ]
