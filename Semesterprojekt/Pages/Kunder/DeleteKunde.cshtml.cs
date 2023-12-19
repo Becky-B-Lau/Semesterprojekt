@@ -21,7 +21,7 @@ namespace Semesterprojekt.Pages.Kunder
 			_itemService = itemService;
 		}
 
-		//public Property "Ordre" af typen models.Ordre
+		//public Property "Ordre" af Klassen ordre
 		[BindProperty]
 		public Models.Ordre Ordre { get; set; }
 

@@ -5,6 +5,7 @@
 <html>
     <head>
     <style>
+
     *,
     *:before,
     *:after {
@@ -17,6 +18,7 @@
         font-family: 'Open Sans', Helvetica, Arial, sans-serif;
         background: #ffffff;
     }
+
 
     input,
     button {
@@ -317,65 +319,88 @@
     <br>
     <br>
     <div class="cont">
+        @* Login form *@
         <div class="form sign-in">
+          @*   Overskrift *@
             <h2>Velkommen</h2>
+            @* Post - man kan redigere *@
             <form method="post">
+               @*  Username felt *@
                 <label asp-for="UserName">
+                    @* Navnet til feltet username *@
                     <span>Brugernavn</span>
                     <input asp-for="UserName" />
                 </label>
+                @* Password felt *@
                 <label asp-for="Password">
+                    @* Navnet til feltet password *@
                     <span>Adgangskode</span>
                     <input asp-for="Password" />
                 </label>
+                @* Glemt adgangskode tekst, som man ikke kan trykke på *@
                 <p class="forgot-pass">Glemt adgangskode?</p>
 
-                <input type="submit" onclick=" window.location.href='/LogInd' ;" id="LogInd" class="LogInd" value="Log Ind"></input>
+               @*  Log ind knappen *@
+                <input type="submit" onclick=" window.location.href='/LogInd' ;" id="LogInd" class="LogInd" value="Log Ind">
             </form>
         </div>
+        @* Bruges til CSS, så log ind og Opret en bruger hænger sammen *@
         <div class="sub-cont">
             <div class="img">
                 <div class="img__text m--up">
 
+                    @* Teksten/informationen i højre side *@
                     <h3>Har du ikke en bruger? Opret en her:</h3>
                 </div>
                 <div class="img__text m--in">
 
+                    @* Teksten/informationen i venstre side *@
                     <h3>Hvis du allerede har en bruger, så bare log ind.</h3>
                 </div>
                 <div class="img__btn">
+                    @* Felterne man kan trykke på, for enten at logge ind eller oprette en bruger *@
                     <span class="m--up">Opret</span>
                     <span class="m--in">Log ind</span>
                 </div>
             </div>
+
+           @*  Opret en bruger formen *@
             <div class="form sign-up">
+                @* Overskrift *@
                 <h2>Opret en bruger</h2>
+               @*  Gør at man kan redigere *@
                 <form method="post">
+                    @* Navn feltet *@
                     <label ="Name">
                         <span>Navn</span>
                         <input ="Name" />
                     </label>
+                    @* Email feltet *@
                     <label ="Email">
                         <span>Email</span>
                         <input ="Email" />
                     </label>
+                    @* Brugernavn feltet *@
                     <label asp-for="UserName">
                         <span>Brugernavn</span>
                         <input asp-for="UserName" />
                     </label>
+                    @* Adgangskode feltet *@
                     <label asp-for="Password">
                         <span>Adgangskode</span>
                         <input asp-for="Password" />
                     </label>
                     <br />
 
-                    <input type="submit" onclick=" window.location.href='/LogInd' ;" id="Opret" class="LogInd" value="Opret"></input>
+                    @* @* Opret knappen *@ 
+                    <input type="submit" onclick=" window.location.href='/LogInd' ;" id="Opret" class="LogInd" value="Opret">
                 </form>
 
             </div>
         </div>
     </div>
 
+    @* Javascript, der gør log ind og opret interaktive (at den skifter til login/sign up) *@
     <script>
         document.querySelector('.img__btn').addEventListener('click', function () {
             document.querySelector('.cont').classList.toggle('s--signup');
