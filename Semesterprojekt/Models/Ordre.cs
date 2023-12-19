@@ -14,11 +14,9 @@ namespace Semesterprojekt.Models
         [Display(Name = "Beskrivelse")]
         [Required(ErrorMessage = "Du skal angive en beskrivelse")]
         public string? Beskrivelse { get; set; }
-		public double Pakke { get; set; }
 		public Billeder Billeder { get; set; }
 
-        public bool Godkendt { get; set; }
-
+      
 
 		public Ordre() {  }
 

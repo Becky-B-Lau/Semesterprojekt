@@ -6,31 +6,32 @@ namespace Semesterprojekt.Pages.Workshops
 {
     public class EditWorkshopModel : PageModel
     {
-        private IWorkshopService _workshopService;
-        public EditWorkshopModel(IWorkshopService workshopService) 
+        //Constructor der modtager en IWorkshopService som parameter
+        private IWorkshopService _workshopService; //Et instansfild.
+        public EditWorkshopModel(IWorkshopService workshopService) //Depndency ijektion //En constuctor.
         {
             _workshopService = workshopService;
         }
-        [BindProperty]
+        [BindProperty] //Hænger sammen med linjen under og binder de enskaber vi har i Models.Workshop til siden.
         public Models.Workshop Workshop { get; set; }
 
-        public IActionResult OnGet(int Id)                      
+        public IActionResult OnGet(int Id) //Henter data                      
         {
-            Workshop = _workshopService.GetWorkshop(Id);
-            if (Workshop == null)  
+            Workshop = _workshopService.GetWorkshop(Id); //Henter workshop fra workshopService baseret på det givne id.
+            if (Workshop == null) //Sikkre sig at der er et id der matcher
             { 
-                return RedirectToPage("/NotFound");
+                return RedirectToPage("/NotFound"); //Hvis den er null, omdirigeres brugeren til siden "NotFound"  
             }
-            return Page();
+            return Page(); //Ellers bliver brugeren omdirigeres til opdater workshop siden
         }
-        public IActionResult OnPost() 
+        public IActionResult OnPost() //Bekræfter en handling, og giver data vidre
         {
-            if (!ModelState.IsValid) 
+            if (!ModelState.IsValid) //Sikkre sig at alle data'er er udfylde
             {
-                return Page();
+                return Page(); //Omdirigere brugeren til opdater workshop siden
             }
-            _workshopService.UpdateWorkshop(Workshop);
-            return RedirectToPage("Kalender");
+            _workshopService.UpdateWorkshop(Workshop); //Kalder på metoden UpdateWorkshop(Workshop), som den så går igennem før den fortsætter
+            return RedirectToPage("Kalender"); //Og omdirigere brugeren tilbage til "Kalender" siden
         }
     }
 }

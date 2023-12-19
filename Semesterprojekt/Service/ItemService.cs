@@ -31,13 +31,14 @@ namespace Semesterprojekt.Service
 
 		public List<Ordre> GetItems() { return _items; }
 
-
+		// NameSearch()
+		// Metoden bruges for at søge på ordrer i Ordreoversigten (Order.cshtml)
 		public IEnumerable<Ordre> NameSearch(string str)
 		{
 			List<Ordre> nameSearch = new List<Ordre>();
 			foreach (Ordre item in _items)
 			{
-				if (item.id.ToString().Contains(str.ToLower()))
+				if (item.id.ToString().Contains(str))
 				{
 					nameSearch.Add(item);
 				}
@@ -57,7 +58,16 @@ namespace Semesterprojekt.Service
 			return null;
 		}
 
-		
+		//UopdateItem
+
+		//Metoden bruges både af EditOrder og UpdateKunde. Vi bruger en liste items med Kunde Objekter, som vi sløjfer gennem. 
+		//Hvis ID på den nuværende objekt er lige med ID på den objekt vi har passed, opdateres properties af den nuværende Kunde/Ordre 
+		//med den nye værdi brugeren har indtastet.
+
+		//Kun udvalgte properties vises på de individuelle opdaterings sider - som set i EditOrder.cshtml / UpdateKunde.cshtml
+
+		//Når alle værdier er opdateret, bliver de gemt i en JSON fil.
+
 		public void UpdateItem(Ordre item)
 		{
 			if (item!= null)

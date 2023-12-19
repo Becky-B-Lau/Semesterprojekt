@@ -5,48 +5,48 @@
 
 <form method="post">
 
-   <!-- Read only -->
+   <!-- Parameterne fra Kunde Objekter er read-only og skjult overfor brugeren med "hidden".  -->
     <div class="form-group">
         <label asp-for="Item.id" class="control-lable"></label>
         <input asp-for="Item.id" class="form-control" readonly="@(true)" />
     </div>
 
     <div class="form-group">
-        <label asp-for="Item.Kunde.Kundeid" class="control-lable"></label>
-        <input asp-for="Item.Kunde.Kundeid" class="form-control" readonly="@(true)" />
+        <label hidden asp-for="Item.Kunde.Kundeid" class="control-lable"></label>
+        <input hidden asp-for="Item.Kunde.Kundeid" class="form-control" readonly="@(true)" />
     </div>
 
     <div class="form-group">
-        <label asp-for="Item.Kunde.Navn" class="control-lable"></label>
-        <input asp-for="Item.Kunde.Navn" class="form-control" readonly="@(true)" />
+        <label hidden asp-for="Item.Kunde.Navn" class="control-lable"></label>
+        <input hidden asp-for="Item.Kunde.Navn" class="form-control" readonly="@(true)" />
     </div>
 
     <div class="form-group">
-        <label asp-for="Item.Kunde.Alder" class="control-lable"></label>
-        <input asp-for="Item.Kunde.Alder" class="form-control" readonly="@(true)" />
+        <label hidden asp-for="Item.Kunde.Alder" class="control-lable"></label>
+        <input hidden asp-for="Item.Kunde.Alder" class="form-control" readonly="@(true)" />
     </div>
 
     <div class="form-group">
-        <label asp-for="Item.Kunde.Telefonnummer" class="control-lable"></label>
-        <input asp-for="Item.Kunde.Telefonnummer" class="form-control" readonly="@(true)" />
+        <label hidden asp-for="Item.Kunde.Telefonnummer" class="control-lable"></label>
+        <input hidden asp-for="Item.Kunde.Telefonnummer" class="form-control" readonly="@(true)" />
     </div>
 
     <div class="form-group">
-        <label asp-for="Item.Kunde.Adresse" class="control-lable"></label>
-        <input asp-for="Item.Kunde.Adresse" class="form-control" readonly="@(true)" />
+        <label hidden asp-for="Item.Kunde.Adresse" class="control-lable"></label>
+        <input hidden asp-for="Item.Kunde.Adresse" class="form-control" readonly="@(true)" />
     </div>
 
     <div class="form-group">
-        <label asp-for="Item.Kunde.Email" class="control-lable"></label>
-        <input asp-for="Item.Kunde.Email" class="form-control" readonly="@(true)" />
+        <label hidden asp-for="Item.Kunde.Email" class="control-lable"></label>
+        <input hidden asp-for="Item.Kunde.Email" class="form-control" readonly="@(true)" />
     </div>
 
     <div class="form-group">
-        <label asp-for="Item.Kunde.Type" class="control-lable"></label>
-        <input asp-for="Item.Kunde.Type" class="form-control" readonly="@(true)" />
+        <label hidden asp-for="Item.Kunde.Type" class="control-lable"></label>
+        <input hidden asp-for="Item.Kunde.Type" class="form-control" readonly="@(true)" />
     </div>
 
-    <!-- Kan redigeres -->
+    <!-- Ikke skjult. Kan redigeres -->
     <div class="form-group">
         <label asp-for="Item.DateTime" class="control-lable"></label>
         <input asp-for="Item.DateTime" class="form-control" />

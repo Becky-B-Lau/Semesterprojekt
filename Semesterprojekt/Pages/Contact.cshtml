@@ -11,26 +11,25 @@
     <style>
         .Alle
         {
-         position: relative;   
+            position: relative;  /*  Element bevæger sig relativt i forhold til dets oprindelige position.  */
         }
         .Kontakt {
-            position: absolute;
-            top: 200px;
-            left: 600px;
+            position: absolute;  /* Element fjernes det fra det normale layoutflow, og dets position bestemmes af de følgende egenskaber: top, right, bottom, og left */
+            top: 200px; /* den bliver rykket 200px ned */
+            left: 600px; /* bliver rykket 600px til højre */
             
         }
         
         .pKontakt {
-          
-            font-size: 18px;
-            text-align: center;
+            font-size: 18px; /* Tekst størrelse */
+            text-align: center; /* Tekst skal være center */
         }
 
         
         .text-box {
-            width: 390px;
-            resize: none;
-            overflow: auto;
+            width: 390px; /*    Bestemmer bredde på element (i dette tilfælde 390px) */
+            resize: none; /* Gør at bruger ikke kan ændre på størrelse af textarea'en */
+            overflow: auto; /* Gør at hvis bruger skriver mere end det synlige området så styre hvordan den skal håndtere  */
         }
         
    

@@ -1,9 +1,11 @@
 ﻿@page
-@using Semesterprojekt.Models;
+@using Semesterprojekt.Models; @*Tillader siden at bruge Models namespace*@
 @model OrderModel
 @{
-	ViewData["Title"] = "Ordreoversigt";
+	ViewData["Title"] = "Ordreoversigt"; @*Setter titlen.Bruger ViewData Dictionary med key-pair value, som vises senere som sidens Titel*@
 }
+
+@*CSS og JavaScripttil en Navbar til venstre af siden. Tillader brugeren at navigere mellem Ordre og Kundeoversigt *@
 <style>
 	.sidenav {
 		height: 100%;
@@ -69,19 +71,33 @@
 	}
 </script>
 
+
+
 <body>
 	
 	<h1> <center> @ViewData["Title"]</center></h1>
 	<hr />
 	
 
-	@* Searchbar *@
+	@* Searchbar 
+
+	Post-metoden i form<> og input af typen submit gør, at der sendes en http request når man klikker på 
+	"Search" knappen. Asp-for mapper input til SearchString property i vores pagemodel.
+	Asp-page-handler gør at NameSearch metoden er tilføjet til OnPost metoden i vores pagemodel (OnPostNameSearch)
+	og at siden bliver opdateret. 
+
+	*@
+
 	<form method="post" class="form-inline">
 		<input asp-for="SearchString" class="form-control mr-1" placeholder="Enter search term" />
 		<input type="submit" asp-page-handler="NameSearch" value="Search" class="btn btn-primary" />
 	</form>
 
 	<hr>
+
+	@* Ordre Oversigt
+
+	Her opretter vi en tabel med Ordre detaljerne som tabeloverskrifter *@
 
 	<table class="table table-bordered table-hover table-striped">
 		<thead>
@@ -104,19 +120,11 @@
 				<th>
 					Pris
 				</th>
-				@*<th>
-					Alder
-				</th>
-				*@
-
+				
 				<th>
 					Beskrivelse
 				</th>
 
-				@*<th>
-					Pris
-				  </th>*@
-			
 				<th>
 					Bekræft / Afvis Ordre
 				</th>
@@ -124,9 +132,19 @@
 			</tr>
 		</thead>
 
+		@* 
+			Tabel Body
+
+			Selve cellerne under hvert tabeloverskrift udfyldes med ordredetaljerne når en ny ordre oprettes på Kontaktsiden.
+			@ symbol foran if-nøgleordet er nødvendigt for at bruge C# code i en HTML tag.
+			
+		*@
+
 		<tbody>
-			@if (Model.Items != null)
+			@if (Model.Items != null) // Sikrer os at Items property (vores liste af Ordre Objekter) er ikke null før vi sløjfer gennem dem.
 			{
+				// Sløjfer gennem Items og sorterer objekter på Id, dvs. den nyeste/højeste vises som den øverste i tabellen.
+				// Den gør det ved at bruge en såkaldt LINQ metode - noget vi ikke har lært om endnu
 				foreach (var item in Model.Items.OrderByDescending(i => i.id))
                 {
 					<tr>
@@ -157,21 +175,38 @@
 							@item.Beskrivelse
 						</td>
 
+						@*  Cellen i den sidste kolonne indeholder tre knapper: Accepter, Afvis og Rediger  
+
+							Accepter og Afvis knapper har ingen business logic og den eneste de gør er at give feedback til brugeren.
+
+							Rediger knappen har business logic på Model siden. Bruger <a> for at lave en hyperlink til EditOrder siden hvor man kan opdater en ordre. Bruger Ordre ID (@item.id) for at
+							at referere til en specifik ordre.
+						*@
 						<td>
 							<div class="form-group">
+								@*Accepter Knap - når man klikker på Accepter eller Afvis knappen, kaldes funktionen "handleAcceptClick(). Nede i <script> udløser dette
+								handling en alert pop-up og en ændring på knappernes farve. Desuden deaktiveres knapperne og det kan ikke klikkes igen.
+								*@
 								<input type="submit" onclick="handleAcceptClick1()" id="Send1" value="Accepter" class="btn btn-primary" style="margin:2px;" />
 
+								@*Afvis Knap*@
 								<input type="submit" onclick="handleAcceptClick2()" id="Send2" value="Afvis" class="btn btn-primary" style="margin:2px;" />
 
-								 <a input type="submit" id="Send" class="btn btn-primary" asp-page="EditOrder" asp-route-id="@item.id" style="margin: 1px;">   Rediger   </a>
+								@*Rediger Knap - Brugeren navigerer til EditOrder siden. Ordre Id er brugt til at linke til den rigtige objekt*@
+								 <a id="Send" class="btn btn-primary" asp-page="EditOrder" asp-route-id="@item.id" style="margin: 1px;">   Rediger   </a>
 
-								 <!-- Det her deaktiverer knappen (Send1) når man klicker på den-->
+								 <!-- JS til accepter/afvis knapper. 
+
+									 Her deklareres to funktioner. Når man klikker på en knap, specificer onclick attribut hvilken funktion kaldes (handleAcceptClick1 eller 2).
+									 Begge funktioner udløser en farve skift, ædnring på beskrivelsen (fx Afvis -> Afvist), samt deaktivering af knapperne. 
+									 Desuden vises en Alert besked øverst på siden.
+
+								 -->
 								<script>
 									function handleAcceptClick1() {
-										// Perform your desired action
+
 										alert('Du har accepteret Ordren. Bekræftelsesmail er sendt til Kunden.');
 
-										// Once clicked, disable and rename buttons, change color
 										document.getElementById('Send1').style.backgroundColor = 'green';
 										document.getElementById('Send1').value = 'Accepteret';
 										document.getElementById('Send1').disabled = true;
