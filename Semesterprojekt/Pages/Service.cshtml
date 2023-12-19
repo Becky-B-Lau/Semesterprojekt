@@ -6,10 +6,12 @@
 
     <head>
         <style>
+            /* tekst i body */
         body {
             font-family: "Lato", sans-serif;
         }
 
+        /* Sidebarens style */
         .sidenav {
             height: 100%;
             width: 0;
@@ -23,6 +25,7 @@
             padding-top: 60px;
         }
 
+        /* Teksten i knapperne i sidenaven */
             .sidenav a {
                 padding: 8px 8px 8px 32px;
                 text-decoration: none;
@@ -31,11 +34,12 @@
                 display: block;
                 transition: 0.3s;
             }
-
+           /*  Når man holder musen henover knapperne, skrifter teksten til hvid */
                 .sidenav a:hover {
                     color: #f1f1f1;
                 }
 
+               /*  Krydset til at lukke sidenaven */
             .sidenav .closebtn {
                 position: absolute;
                 top: 0;
@@ -44,26 +48,31 @@
                 margin-left: 50px;
             }
 
+        /*     Slide-effekten når man åbner sidebaren, der tager 0.5 sekunder (hænger sammen med javasrcipt) */
         #main {
             transition: margin-left .5s;
             padding: 16px;
         }
 
+       /*  Style til billedet */
         .spacing {
             height: 0;
         }
 
+       /*  Style til billedet */
         .image-block {
             width: 100%;
             height: 300px;
         }
 
+        /* Style til billedet*/
         .img-box {
             position: relative;
             text-align: center;
             color: white;
         }
 
+       /*  Teksten i billedet */
         .centered {
             position: absolute;
             top: 50%;
@@ -128,7 +137,7 @@ Når closeNav() er kaldt ved at klikke på krydset, tager den os tilbage til sta
 </p>
 
     <hr />
-    @* Healine 6, så teksten fanger læserens øjne *@
+    @* Headline 6, så teksten fanger læserens øjne *@
     <h6>
         <center>
             Klik "Åbn" øverst til venstre, for at se pakkerne.

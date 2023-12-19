@@ -6,6 +6,7 @@
 
 <head>
     <style>
+        /* Style til boksene */
         .box {
             text-align: center;
             float: left;
@@ -17,10 +18,12 @@
             background-color: lightgray;
         }
 
+        /* tekst i body */
         body {
             font-family: "Lato", sans-serif;
         }
 
+        /* Sidebarens style */
         .sidenav {
             height: 100%;
             width: 0;
@@ -34,6 +37,7 @@
             padding-top: 60px;
         }
 
+            /* Teksten i knapperne i sidenaven */
             .sidenav a {
                 padding: 8px 8px 8px 32px;
                 text-decoration: none;
@@ -43,10 +47,12 @@
                 transition: 0.3s;
             }
 
+                /*  Når man holder musen henover knapperne, skrifter teksten til hvid */
                 .sidenav a:hover {
                     color: #f1f1f1;
                 }
 
+            /*  Krydset til at lukke sidenaven */
             .sidenav .closebtn {
                 position: absolute;
                 top: 0;
@@ -55,26 +61,31 @@
                 margin-left: 50px;
             }
 
+        /*     Slide-effekten når man åbner sidebaren, der tager 0.5 sekunder (hænger sammen med javasrcipt) */
         #main {
             transition: margin-left .5s;
             padding: 16px;
         }
 
+        /*  Style til billedet */
         .spacing {
             height: 0;
         }
 
+        /*  Style til billedet */
         .image-block {
             width: 100%;
             height: 300px;
         }
 
+        /*  Style til billedet */
         .img-box {
             position: relative;
             text-align: center;
             color: white;
         }
 
+        /*  Teksten i billedet */
         .centered {
             position: absolute;
             top: 50%;
@@ -85,18 +96,27 @@
     </style>
 </head>
 
-
+@*  <div> betyder sektion.
+    id="mySidenav" giver et id til <div> (bliver kun brugt en gang) som kan blive brugt til CSS
+    class="sidenav" giver en klasse til <div> som kan bruges til css de steder, der har det samme klasse navn. *@
 <div id="mySidenav" class="sidenav">
+    @* <a href="javascript:void(0)" laver et hyperlink, som ikke navigerer til en anden side, men gør noget, når man klikker på knappen.
+    onclick="closeNav()">&times; = laver et kryds i sidenaven, som man kan trykke på for at komme ud af den igen *@
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    @* hyperlinks, der fører os ind på en anden del af hjemmesiden. *@
     <a href="/Erhverv">Erhverv</a>
     <a href="/Portræt1">Portræt</a>
     <a href="/Event">Event</a>
 </div>
 
+@* Åbn knappen *@
 <div id="main">
     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Åbn</span>
 </div>
 
+@* Javascript:
+Når openNav() er kaldt ved at klikke på "Åbn", åbner den sidenaven.
+Når closeNav() er kaldt ved at klikke på krydset, tager den os tilbage til startpositionen på siden. *@
 <script>
     function openNav() {
         document.getElementById("mySidenav").style.width = "250px";
@@ -111,34 +131,37 @@
 </script>
 
 
-<a href="c:\users\lindb\documents\github\semesterprojekt\semesterprojekt\pages\portræt.cshtml"></a>
-<a href="c:\users\lindb\documents\github\semesterprojekt\semesterprojekt\pages\portræt.cshtml.cs"></a>
-
-
 <body>
 
     <div class="img-box">
+        @*Baggrunds foto, der er stationær (det bevæger sig ikke, når man ruler ned på siden) og der er i midten*@
         <div class="spacing"></div>
         <div class="image-block" style="background:url(../Images/Service-Images/Portræt.jpg) no-repeat center center fixed; opacity: 0.7;"></div>
+        @*Tekst i midten af fotoet*@
         <div class="centered"><h1 style="text-align: center;">@ViewData["Title"]</h1></div>
     </div>
 
+    @* "hr" betyder horizontal line *@
     <hr />
+    @* Paragraph text, som er centreret *@
     <p>
         <center>
             Jeg tilbyder skræddersyede portrætfotos til det behov du ønsker. Om det er til linkedIn, sociale medier eller til at have stående på reolen hjemme i stuen. Nedenunder kan du se, hvilke pakker jeg tilbyder:
         </center>
     </p>
     <hr />
-
+    @* Headline*@
     <h3><center>Priser</center></h3>
     <br />
 
+    @*  Box nr. 1 - venstre *@
     <div class="box">
 
         <h5>Portræt - pakke nr. 1</h5>
+        @* "i" = skråskrift *@
         <h6><i>Værdi: 2500kr</i></h6>
         <br />
+        @* "u" = streg under ordene *@
         <p><u>Pakkens indhold:</u></p>
         <ul>
             <li>20 portrætter 1-3 personer</li>
@@ -150,11 +173,14 @@
 
     </div>
 
+    @* Box nr. 2 - højre *@
     <div class="box">
 
         <h5>Portræt - pakke nr. 2</h5>
+        @* "i" = skråskrift *@
         <h6><i>Værdi: 5000kr</i></h6>
         <br />
+        @* "u" = streg under ordene *@
         <p><u>Pakkens indhold:</u></p>
         <ul>
             <li>50 portrætter 4-10 personer</li></li>
