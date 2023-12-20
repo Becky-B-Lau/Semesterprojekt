@@ -124,7 +124,7 @@ Når closeNav() er kaldt ved at klikke på krydset, tager den os tilbage til sta
 			@* Items må ikke være null *@
 			@if (Model.Items != null)
 			{
-				@* Foreach loop. Tjekker at ordrens id stemmer overens *@
+				@* Foreach loop. Sløjfer gennem Items og sorterer objekter på Id, dvs. den nyeste/højeste vises som den øverste i tabellen. *@
 				foreach (var item in Model.Items.OrderByDescending(i => i.id))
 				{
 					<tr>
